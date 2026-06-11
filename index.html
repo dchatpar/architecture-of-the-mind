@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture of the Mind — Ancient Wisdom. Modern Psychology.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--gold:#D7AA50;--obsidian:#080604;--marble:#F7EAD2;--wine:#5E1711;
+--gold-light:#E8C97A;--gold-dark:#A8822A;--glass:rgba(215,170,80,0.06);
+--glass-border:rgba(215,170,80,0.15);
+}
+html{scroll-behavior:smooth}
+body{background:var(--obsidian);color:var(--marble);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* PARTICLES */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.6}
+.particle{position:absolute;width:3px;height:3px;background:var(--gold);border-radius:50%;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;
+background:linear-gradient(180deg,rgba(8,6,4,0.95) 0%,transparent 100%);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
+.nav-logo{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{color:var(--marble);text-decoration:none;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;opacity:0.7;transition:all 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 28px;font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Cinzel',serif}
+.nav-cta:hover{background:var(--gold);color:var(--obsidian)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(94,23,17,0.15) 0%,transparent 60%),
+url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="a" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="%23D7AA50" stop-opacity="0.03"/><stop offset="100%" stop-color="%23080604" stop-opacity="0"/></radialGradient></defs><rect fill="%23080604"/><ellipse cx="600" cy="320" rx="500" ry="350" fill="url(%23a)"/><g fill="%23D7AA50" opacity="0.04"><rect x="300" y="200" width="8" height="400" rx="4"/><rect x="892" y="200" width="8" height="400" rx="4"/><rect x="100" y="150" width="6" height="500" rx="3"/><rect x="1094" y="150" width="6" height="500" rx="3"/><polygon points="304,200 560,80 816,200" fill="none" stroke="%23D7AA50" stroke-width="2"/><polygon points="896,200 1140,80 1096,200" fill="none" stroke="%23D7AA50" stroke-width="2"/></g></svg>');
+background-size:cover}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:0 40px}
+.hero-ornament{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:8px;color:var(--gold);margin-bottom:30px;opacity:0.8}
+.hero h1{font-family:'Cormorant+Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:600;line-height:1.1;margin-bottom:24px;color:var(--marble)}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:1.1rem;line-height:1.8;opacity:0.7;max-width:640px;margin:0 auto 50px;font-weight:300}
+.hero-btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--obsidian);padding:16px 40px;font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none;font-weight:600}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(215,170,80,0.3)}
+.btn-outline{background:transparent;border:1px solid var(--glass-border);color:var(--marble);padding:16px 40px;font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* DIVIDER */
+.divider{text-align:center;padding:20px 0}
+.divider svg{width:200px;height:20px}
+
+/* SECTIONS */
+section{padding:120px 60px;position:relative}
+.section-label{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:6px;color:var(--gold);margin-bottom:20px;opacity:0.8}
+.section-title{font-family:'Cormorant+Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.2;margin-bottom:30px}
+.section-title span{color:var(--gold)}
+.section-text{font-size:1rem;line-height:1.9;opacity:0.7;max-width:680px;font-weight:300}
+
+/* SECTION DARK */
+.section-dark{background:linear-gradient(180deg,var(--obsidian) 0%,rgba(8,6,4,0.95) 100%)}
+.section-marble{background:linear-gradient(135deg,rgba(247,234,210,0.03) 0%,transparent 50%),var(--obsidian)}
+
+/* PROBLEM SECTION */
+.problem{text-align:center;max-width:800px;margin:0 auto}
+.problem-list{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:80px;text-align:left}
+.problem-card{background:var(--glass);border:1px solid var(--glass-border);padding:40px 30px;border-radius:2px;transition:all 0.4s}
+.problem-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.problem-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;color:var(--gold);margin-bottom:16px}
+.problem-card p{font-size:0.9rem;line-height:1.8;opacity:0.6}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:80px}
+.feature-card{background:linear-gradient(135deg,rgba(215,170,80,0.04) 0%,transparent);border:1px solid var(--glass-border);padding:50px 35px;border-radius:2px;text-align:center;transition:all 0.4s;position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.4s}
+.feature-card:hover{border-color:rgba(215,170,80,0.4);transform:translateY(-6px)}
+.feature-card:hover::before{opacity:1}
+.feature-icon{font-size:2.5rem;margin-bottom:24px;display:block}
+.feature-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:16px;color:var(--marble)}
+.feature-card p{font-size:0.9rem;line-height:1.8;opacity:0.6}
+
+/* QUOTE */
+.quote-section{text-align:center;padding:160px 60px;background:linear-gradient(180deg,transparent,rgba(94,23,17,0.08),transparent)}
+.quote-mark{font-family:'Cormorant+Garamond',serif;font-size:6rem;line-height:1;color:var(--gold);opacity:0.3}
+.quote-text{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;font-style:italic;max-width:800px;margin:0 auto 40px;line-height:1.4}
+.quote-author{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:4px;color:var(--gold);opacity:0.7}
+
+/* EMAIL CAPTURE */
+.email-section{text-align:center;max-width:600px;margin:0 auto}
+.email-form{display:flex;gap:0;margin-top:40px;max-width:500px;margin-left:auto;margin-right:auto}
+.email-input{flex:1;padding:18px 24px;background:rgba(247,234,210,0.05);border:1px solid var(--glass-border);border-right:none;color:var(--marble);font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s}
+.email-input::placeholder{color:rgba(247,234,210,0.3)}
+.email-input:focus{border-color:var(--gold)}
+.email-btn{padding:18px 30px;background:var(--gold);color:var(--obsidian);border:none;font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-weight:600;white-space:nowrap}
+.email-btn:hover{background:var(--gold-light)}
+
+/* BOOK SECTION */
+.book-section{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;margin:0 auto}
+.book-visual{position:relative;text-align:center}
+.book-mockup{width:320px;height:460px;background:linear-gradient(135deg,var(--wine) 0%,#3a0d08 100%);border:1px solid var(--gold);margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;position:relative;box-shadow:0 40px 80px rgba(0,0,0,0.5),0 0 60px rgba(215,170,80,0.1)}
+.book-mockup::before{content:'';position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(215,170,80,0.2)}
+.book-title{font-family:'Cormorant+Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--marble);margin-bottom:8px;text-align:center}
+.book-sub{font-size:0.75rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px}
+.book-author{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--marble);opacity:0.6}
+.book-spine{position:absolute;left:-30px;top:0;bottom:0;width:30px;background:linear-gradient(90deg,#3a0d08,var(--wine));border-left:2px solid var(--gold-dark)}
+.book-content h2{font-family:'Cormorant+Garamond',serif;font-size:2.5rem;font-weight:600;margin-bottom:20px}
+.book-content h2 span{color:var(--gold)}
+.book-price{font-family:'Cormorant+Garamond',serif;font-size:2rem;color:var(--gold);margin-bottom:8px}
+.book-includes{list-style:none;margin:30px 0;display:flex;flex-direction:column;gap:12px}
+.book-includes li{font-size:0.9rem;opacity:0.7;padding-left:24px;position:relative}
+.book-includes li::before{content:'⟡';position:absolute;left:0;color:var(--gold);font-size:0.7rem}
+.buy-btn{display:inline-block;background:var(--gold);color:var(--obsidian);padding:18px 50px;font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none;font-weight:600}
+.buy-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(215,170,80,0.3)}
+
+/* FREE CHAPTER */
+.chapter-content{max-width:720px;margin:0 auto;text-align:center}
+.chapter-text{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;line-height:2;font-style:italic;opacity:0.85;margin-bottom:50px;text-align:left}
+.chapter-text p{margin-bottom:24px}
+
+/* LIBRARY */
+.library-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;max-width:900px;margin:80px auto 0}
+.library-card{background:var(--glass);border:1px solid var(--glass-border);padding:40px;transition:all 0.4s}
+.library-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.library-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--gold);margin-bottom:12px}
+.library-card p{font-size:0.9rem;opacity:0.6;line-height:1.8;margin-bottom:20px}
+.library-tag{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:3px;color:var(--gold);opacity:0.6;border:1px solid var(--glass-border);padding:6px 16px;display:inline-block}
+.future-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.future-item{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:2px;color:var(--marble);opacity:0.4;border:1px solid rgba(247,234,210,0.1);padding:8px 16px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1000px;margin:0 auto}
+.about-text p{font-size:1rem;line-height:2;opacity:0.7;margin-bottom:20px}
+.about-text p:last-child{margin-bottom:0}
+
+/* CONTACT */
+.contact-grid{max-width:900px;margin:80px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-form{display:flex;flex-direction:column;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-label{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0.8}
+.form-input,.form-textarea{background:rgba(247,234,210,0.04);border:1px solid var(--glass-border);padding:16px 20px;color:var(--marble);font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s;width:100%}
+.form-input:focus,.form-textarea:focus{border-color:var(--gold)}
+.form-textarea{resize:vertical;min-height:140px}
+.submit-btn{background:var(--gold);color:var(--obsidian);padding:18px;font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;font-weight:600;margin-top:10px}
+.submit-btn:hover{background:var(--gold-light)}
+.contact-info h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;margin-bottom:20px;color:var(--gold)}
+.contact-info p{font-size:0.9rem;opacity:0.6;line-height:1.8;margin-bottom:12px}
+
+/* FOOTER */
+footer{background:rgba(5,3,2,0.95);border-top:1px solid var(--glass-border);padding:60px}
+.footer-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px}
+.footer-brand{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);letter-spacing:3px;margin-bottom:16px}
+.footer-tag{font-size:0.85rem;opacity:0.5;font-style:italic;margin-bottom:24px;font-family:'Cormorant+Garamond',serif}
+.footer-desc{font-size:0.85rem;opacity:0.5;line-height:1.8}
+.footer-col h4{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--gold);margin-bottom:20px;opacity:0.8}
+.footer-col a{display:block;color:var(--marble);text-decoration:none;font-size:0.85rem;opacity:0.5;margin-bottom:12px;transition:opacity 0.3s}
+.footer-col a:hover{opacity:1;color:var(--gold)}
+.footer-bottom{text-align:center;padding-top:40px;margin-top:40px;border-top:1px solid var(--glass-border);font-size:0.8rem;opacity:0.3}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+.reveal-delay-4{transition-delay:0.4s}
+
+/* MOBILE */
+@media(max-width:900px){
+nav{padding:16px 24px}
+.nav-links{display:none}
+.hero-btns{flex-direction:column;align-items:center}
+.problem-list,.features-grid,.library-grid,.contact-grid,.about-grid,.book-section{grid-template-columns:1fr}
+.email-form{flex-direction:column}
+.email-input{border-right:1px solid var(--glass-border)}
+.book-section{grid-template-columns:1fr;text-align:center}
+.book-mockup{margin:0 auto}
+.footer-content{grid-template-columns:1fr}
+section{padding:80px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAV -->
+<nav>
+<div class="nav-logo">Architecture of the Mind</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#books">Books</a></li>
+<li><a href="#chapter">Free Chapter</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="nav-cta" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">Buy The Book</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="hero-ornament">⟡ &nbsp;&nbsp; PHILOSOPHY &nbsp;&nbsp; ⟡</div>
+<h1>Unlock the <span>Hidden Architecture</span><br>of Your Mind</h1>
+<p class="hero-sub">A premium philosophy experience combining ancient wisdom, subconscious psychology, Stoicism, and transformational storytelling.</p>
+<div class="hero-btns">
+<a href="#books" class="btn-gold">Buy The Book</a>
+<a href="#chapter" class="btn-outline">Read Free Chapter</a>
+</div>
+</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section-dark" id="problem">
+<div class="problem reveal">
+<div class="section-label">THE INVISIBLE PROBLEM</div>
+<h2 class="section-title">Most People Never Discover The <span>Invisible Forces</span> Controlling Their Lives</h2>
+<p class="section-text" style="margin:0 auto">You work harder. You try to stay motivated. You set goals. Yet the same patterns keep returning.</p>
+</div>
+<div class="problem-list">
+<div class="problem-card reveal reveal-delay-1">
+<h3>Ancient Philosophy</h3>
+<p>Ancient philosophers called this ignorance — the inability to see the forms behind the shadows.</p>
+</div>
+<div class="problem-card reveal reveal-delay-2">
+<h3>Modern Psychology</h3>
+<p>Modern psychology calls it conditioning — the subconscious programs running beneath every decision.</p>
+</div>
+<div class="problem-card reveal reveal-delay-3">
+<h3>We Call It</h3>
+<p>The hidden architecture of the mind — the beliefs, patterns, and narratives silently shaping your destiny.</p>
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+<section>
+<div style="text-align:center;max-width:700px;margin:0 auto" class="reveal">
+<div class="section-label">THE FRAMEWORK</div>
+<h2 class="section-title">Three Pillars of <span>True Transformation</span></h2>
+</div>
+<div class="features-grid">
+<div class="feature-card reveal reveal-delay-1">
+<span class="feature-icon">🏛</span>
+<h3>Ancient Philosophy</h3>
+<p>Learn from Socrates, Plato, Aristotle, Epictetus, Seneca, and Marcus Aurelius — not as history, but as operating instructions for the mind.</p>
+</div>
+<div class="feature-card reveal reveal-delay-2">
+<span class="feature-icon">🧠</span>
+<h3>Subconscious Psychology</h3>
+<p>Understand the hidden forces influencing perception, identity, behavior, and emotion — and learn to rewrite them deliberately.</p>
+</div>
+<div class="feature-card reveal reveal-delay-3">
+<span class="feature-icon">📖</span>
+<h3>Transformational Storytelling</h3>
+<p>Experience philosophy through the journey of Orion as he rebuilds his mind and his life from the inside out.</p>
+</div>
+</div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+<div class="quote-mark">"</div>
+<p class="quote-text">The prison you curse may be the prison you carry.</p>
+<div class="quote-author">— Architecture of the Mind</div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="section-dark">
+<div class="email-section reveal" style="margin:0 auto">
+<div class="section-label">JOIN THE INNER CIRCLE</div>
+<h2 class="section-title">Weekly Philosophy. <span>Deep Insights.</span></h2>
+<p class="section-text" style="margin:20px auto 0;text-align:center">Exclusive philosophy lessons, new chapter releases, audiobook updates, and premium insights — every week.</p>
+<form class="email-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:var(--gold);padding:18px;font-family:Cinzel,serif;font-size:0.8rem;letter-spacing:2px\'>Welcome to the Inner Circle</p>'">
+<input type="email" class="email-input" placeholder="Enter your email address" required>
+<button type="submit" class="email-btn">Join Now</button>
+</form>
+</div>
+</section>
+
+<!-- BOOK -->
+<section id="books">
+<div class="book-section reveal">
+<div class="book-visual">
+<div class="book-spine"></div>
+<div class="book-mockup">
+<div class="book-title">Architecture<br>of the Mind</div>
+<div class="book-sub">Ancient Wisdom, the Subconscious,<br>and the Hidden Forces</div>
+<div class="book-author">— The Philosophy Series —</div>
+</div>
+</div>
+<div class="book-content">
+<div class="section-label">THE BOOK</div>
+<h2>The Architecture<br>of the <span>Mind</span></h2>
+<div class="book-price">$19.99</div>
+<ul class="book-includes">
+<li>PDF Ebook — Lifetime Access</li>
+<li>Future Updates — Free</li>
+<li>Reflection Exercises — Included</li>
+<li>Audiobook — Coming Soon</li>
+</ul>
+<p class="section-text">What if everything you call yourself is merely an architecture built by forces you barely understand? Your fears. Your ambitions. Your habits. Your beliefs. Your identity.</p>
+<a href="#" class="buy-btn">Purchase Now</a>
+</div>
+</div>
+</section>
+
+<!-- FREE CHAPTER -->
+<section class="section-dark" id="chapter">
+<div class="chapter-content reveal">
+<div class="section-label">FREE CHAPTER</div>
+<h2 class="section-title">The Cave Beneath the <span>Cave</span></h2>
+<div class="chapter-text">
+<p>Most people know Plato's Cave. Prisoners sit in darkness watching shadows projected onto a wall. Believing those shadows are reality.</p>
+<p>But the deepest cave is not outside us. It is within us. The subconscious mind.</p>
+<p>Every fear becomes a shadow. Every wound becomes a lens. Every belief becomes a silent law.</p>
+<p>People think they are seeing reality. Often they are seeing their own internal architecture reflected back to them.</p>
+<p>Until you map the architecture, you are not free. You are simply a more comfortable prisoner.</p>
+</div>
+</div>
+</section>
+
+<!-- PHILOSOPHY LIBRARY -->
+<section id="library">
+<div style="text-align:center;max-width:700px;margin:0 auto" class="reveal">
+<div class="section-label">THE LIBRARY</div>
+<h2 class="section-title">A Complete <span>Philosophy Series</span></h2>
+<p class="section-text" style="margin:0 auto">Five interconnected volumes exploring the architecture of power, wealth, relationships, and legacy.</p>
+</div>
+<div class="library-grid">
+<div class="library-card reveal reveal-delay-1">
+<div class="library-tag">CURRENT RELEASE</div>
+<h3>The Architecture of the Mind</h3>
+<p>The foundation — subconscious psychology, ancient philosophy, and the framework for rebuilding from the inside out.</p>
+</div>
+<div class="library-card reveal reveal-delay-2">
+<div class="library-tag">UPCOMING</div>
+<h3>The Philosophy of Power</h3>
+<p>Discipline, self-mastery, courage, identity, and leadership — the architecture of personal power.</p>
+</div>
+<div class="library-card reveal reveal-delay-3">
+<div class="library-tag">UPCOMING</div>
+<h3>The Philosophy of Wealth</h3>
+<p>Ancient wisdom applied to money, risk, and decision-making — the architecture of financial freedom.</p>
+</div>
+<div class="library-card reveal reveal-delay-4">
+<div class="library-tag">UPCOMING</div>
+<h3>The Philosophy of Relationships</h3>
+<p>Love, attraction, attachment, and human nature — the architecture of connection.</p>
+</div>
+</div>
+<div style="margin-top:60px;text-align:center" class="reveal">
+<div class="section-label" style="margin-bottom:20px">FUTURE EXPANSION</div>
+<div class="future-list" style="justify-content:center">
+<span class="future-item">AUDIOBOOKS</span>
+<span class="future-item">COURSES</span>
+<span class="future-item">PREMIUM MEMBERSHIP</span>
+<span class="future-item">MOBILE APP</span>
+<span class="future-item">PRIVATE COMMUNITY</span>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-dark" id="about">
+<div class="about-grid reveal">
+<div>
+<div class="section-label">ABOUT</div>
+<h2 class="section-title">Rebuilding Ancient Wisdom<br>for <span>Modern Minds</span></h2>
+<div class="about-text">
+<p>Architecture of the Mind exists for individuals seeking more than motivation. We believe true transformation occurs when philosophy, psychology, and conscious action work together.</p>
+<p>Our mission is to create a library of ideas that help people understand themselves, improve their lives, and build meaningful futures.</p>
+<p>Every word. Every framework. Every story. Designed with one purpose: to help you see the architecture you've built — and give you the tools to rebuild it.</p>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center">
+<svg viewBox="0 0 400 400" width="300" style="opacity:0.3">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23D7AA50" stop-opacity="0.2"/><stop offset="100%" stop-color="%23D7AA50" stop-opacity="0"/></radialGradient></defs>
+<circle cx="200" cy="200" r="180" fill="url(%23g)"/>
+<circle cx="200" cy="200" r="120" fill="none" stroke="%23D7AA50" stroke-width="0.5" opacity="0.5"/>
+<circle cx="200" cy="200" r="60" fill="none" stroke="%23D7AA50" stroke-width="0.5" opacity="0.3"/>
+<line x1="200" y1="20" x2="200" y2="380" stroke="%23D7AA50" stroke-width="0.3" opacity="0.2"/>
+<line x1="20" y1="200" x2="380" y2="200" stroke="%23D7AA50" stroke-width="0.3" opacity="0.2"/>
+<polygon points="200,60 340,320 60,320" fill="none" stroke="%23D7AA50" stroke-width="1" opacity="0.4"/>
+<circle cx="200" cy="200" r="8" fill="%23D7AA50" opacity="0.6"/>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div style="text-align:center;max-width:700px;margin:0 auto" class="reveal">
+<div class="section-label">CONTACT</div>
+<h2 class="section-title">Questions. <span>Opportunities.</span></h2>
+<p class="section-text" style="margin:0 auto">Questions, partnerships, podcast invitations, speaking opportunities, and media inquiries are welcome.</p>
+</div>
+<div class="contact-grid reveal">
+<form class="contact-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:var(--gold);padding:40px 0;font-family:Cinzel,serif;font-size:0.9rem;letter-spacing:2px\'>Message Received — We Will Be In Touch</p>'">
+<div class="form-group">
+<label class="form-label">Name</label>
+<input type="text" class="form-input" placeholder="Your name" required>
+</div>
+<div class="form-group">
+<label class="form-label">Email</label>
+<input type="email" class="form-input" placeholder="your@email.com" required>
+</div>
+<div class="form-group">
+<label class="form-label">Message</label>
+<textarea class="form-textarea" placeholder="Your message..." required></textarea>
+</div>
+<button type="submit" class="submit-btn">Send Message</button>
+</form>
+<div class="contact-info">
+<h3>Get In Touch</h3>
+<p>For questions about the book, philosophy, or partnerships — we respond within 48 hours.</p>
+<p>Podcast and speaking inquiries welcome.</p>
+<p style="margin-top:30px;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:3px;color:var(--gold);opacity:0.6">ARCHITECTURE OF THE MIND</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-content">
+<div>
+<div class="footer-brand">Architecture of the Mind</div>
+<div class="footer-tag">Ancient Wisdom. Modern Psychology. Personal Transformation.</div>
+<p class="footer-desc">A premium digital philosophy library combining ancient philosophy, subconscious psychology, neuroscience, storytelling, and personal transformation.</p>
+</div>
+<div class="footer-col">
+<h4>Navigate</h4>
+<a href="#home">Home</a>
+<a href="#books">Books</a>
+<a href="#chapter">Free Chapter</a>
+<a href="#library">Library</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Connect</h4>
+<a href="#">Newsletter</a>
+<a href="#">Podcast</a>
+<a href="#">Speaking</a>
+<a href="#">Partnerships</a>
+</div>
+</div>
+<div class="footer-bottom">&copy; 2026 Architecture of the Mind. All rights reserved.</div>
+</footer>
+
+<script>
+// Particles
+const pc=document.getElementById('particles');
+for(let i=0;i<40;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(Math.random()*15+10)+'s';
+  p.style.animationDelay=(Math.random()*10)+'s';
+  p.style.width=p.style.height=(Math.random()*3+1)+'px';
+  p.style.opacity=Math.random()*0.5+0.1;
+  pc.appendChild(p);
+}
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:0.15});
+reveals.forEach(r=>io.observe(r));
+</script>
+</body>
+</html>
