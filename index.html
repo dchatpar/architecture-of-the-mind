@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Architecture of the Mind</title>
+<title>Architecture of the Mind | Premium Philosophy Ebooks</title>
+<meta name="description" content="Architecture of the Mind is a premium philosophy brand combining ancient wisdom, subconscious psychology, Stoicism, and transformational storytelling.">
+<meta name="keywords" content="philosophy ebook, stoicism, subconscious mind, ancient wisdom, personal transformation, Plato, Aristotle, Marcus Aurelius">
+<meta property="og:title" content="Architecture of the Mind">
+<meta property="og:description" content="Ancient Wisdom. Modern Psychology. Personal Transformation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dchatpar.github.io/architecture-of-the-mind/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -15,15 +21,20 @@ body{background:var(--obsidian);color:var(--text);font-family:'Inter',sans-serif
 ::-webkit-scrollbar-track{background:var(--obsidian)}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
 
+/* ANNOUNCEMENT BAR */
+.announcement-bar{background:linear-gradient(90deg,var(--gold),#8B6914);color:#020202;padding:10px 20px;text-align:center;font-size:.75rem;letter-spacing:.5px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.announcement-bar a{background:#020202;color:var(--gold);padding:4px 14px;border-radius:3px;font-size:.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.announcement-bar a:hover{background:var(--gold);color:#020202}
+
 /* NAV */
-nav{position:fixed;top:0;width:100%;z-index:1000;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(2,2,2,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--glass-border);transition:all .4s}
-nav.scrolled{padding:10px 40px;background:rgba(2,2,2,0.98)}
-.logo{font-family:'Cormorant+Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold);letter-spacing:3px}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;position:relative}
+nav{position:fixed;top:36px;width:100%;z-index:1000;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(2,2,2,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--glass-border);transition:all .4s}
+nav.scrolled{padding:9px 40px;background:rgba(2,2,2,0.98)}
+.logo{font-family:'Cormorant+Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);letter-spacing:3px}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s}
 .nav-links a:hover{color:var(--gold)}
-.nav-cta{background:linear-gradient(135deg,var(--gold),#8B6914);color:#020202;padding:8px 20px;border:none;border-radius:3px;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(215,174,74,.25)}
+.nav-cta{background:linear-gradient(135deg,var(--gold),#8B6914);color:#020202;padding:7px 18px;border:none;border-radius:3px;font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(215,174,74,.25)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
@@ -32,83 +43,81 @@ nav.scrolled{padding:10px 40px;background:rgba(2,2,2,0.98)}
 .particle{position:absolute;width:1.5px;height:1.5px;background:var(--gold);border-radius:50%;opacity:0;animation:fp 8s infinite}
 @keyframes fp{0%{opacity:0;transform:translateY(100vh)}20%{opacity:.7}80%{opacity:.2}100%{opacity:0;transform:translateY(-10vh)}}
 .hero-content{text-align:center;position:relative;z-index:2;max-width:860px;padding:0 20px}
-.hero-tag{font-size:.65rem;letter-spacing:7px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:.7}
-.hero-content h1{font-family:'Cormorant+Garamond',serif;font-size:clamp(2.6rem,7vw,5rem);font-weight:300;line-height:1.1;margin-bottom:20px;color:var(--marble)}
+.hero-tag{font-size:.62rem;letter-spacing:7px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;opacity:.7}
+.hero-content h1{font-family:'Cormorant+Garamond',serif;font-size:clamp(2.4rem,7vw,4.8rem);font-weight:300;line-height:1.1;margin-bottom:18px;color:var(--marble)}
 .hero-content h1 strong{font-weight:700;color:var(--gold)}
-.hero-sub{font-size:.95rem;color:var(--text-dim);max-width:520px;margin:0 auto 36px;line-height:1.8;font-weight:300;font-style:italic}
-.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,var(--gold),#8B6914);color:#020202;padding:13px 32px;border:none;border-radius:3px;font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(215,174,74,.3)}
-.btn-ghost{border:1px solid var(--glass-border);color:var(--text-dim);padding:13px 32px;border-radius:3px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;background:transparent;text-decoration:none;display:inline-block}
+.hero-sub{font-size:.9rem;color:var(--text-dim);max-width:500px;margin:0 auto 34px;line-height:1.8;font-weight:300;font-style:italic}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--gold),#8B6914);color:#020202;padding:12px 30px;border:none;border-radius:3px;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(215,174,74,.3)}
+.btn-ghost{border:1px solid var(--glass-border);color:var(--text-dim);padding:12px 30px;border-radius:3px;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;background:transparent;text-decoration:none;display:inline-block}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:var(--glass)}
-.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-dim);font-size:.6rem;letter-spacing:4px;text-transform:uppercase}
-.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sa 2.5s infinite}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--text-dim);font-size:.58rem;letter-spacing:4px;text-transform:uppercase}
+.scroll-line{width:1px;height:32px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sa 2.5s infinite}
 @keyframes sa{0%{opacity:1;transform:scaleY(1)}50%{opacity:.4;transform:scaleY(.5)}100%{opacity:1;transform:scaleY(1)}}
 
 /* SECTIONS */
-section{padding:110px 40px;position:relative}
-.section-tag{font-size:.6rem;letter-spacing:7px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;opacity:.7}
-.section-title{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;margin-bottom:14px;color:var(--marble)}
+section{padding:100px 40px;position:relative}
+.section-tag{font-size:.58rem;letter-spacing:7px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;opacity:.7}
+.section-title{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:300;margin-bottom:12px;color:var(--marble)}
 .section-title strong{font-weight:700;color:var(--gold)}
-.section-desc{color:var(--text-dim);max-width:560px;font-size:.88rem;font-weight:300;line-height:1.8;font-style:italic}
-.section-divider{width:50px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:20px 0}
+.section-desc{color:var(--text-dim);max-width:540px;font-size:.85rem;font-weight:300;line-height:1.8;font-style:italic}
 
 /* BOOK VAULT */
 .book-vault{background:var(--deep)}
-.vault-intro{text-align:center;margin-bottom:64px}
-.vault-intro .section-desc{margin:0 auto}
-.book-shelves{display:grid;gap:40px;max-width:1200px;margin:0 auto}
-.shelf-label{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--gold);letter-spacing:2px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--glass-border);font-style:italic}
-.book-row{display:flex;gap:16px;flex-wrap:wrap}
-.book-item{background:linear-gradient(145deg,var(--charcoal),#070707);border:1px solid var(--glass-border);border-radius:6px;padding:20px;width:calc(50%-8px);transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
+.vault-intro{text-align:center;margin-bottom:56px}
+.book-shelves{display:grid;gap:36px;max-width:1200px;margin:0 auto}
+.shelf-label{font-family:'Cormorant+Garamond',serif;font-size:.95rem;color:var(--gold);letter-spacing:2px;margin-bottom:14px;padding-bottom:7px;border-bottom:1px solid var(--glass-border);font-style:italic}
+.book-row{display:flex;gap:14px;flex-wrap:wrap}
+.book-item{background:linear-gradient(145deg,var(--charcoal),#070707);border:1px solid var(--glass-border);border-radius:6px;padding:18px;width:calc(50%-7px);transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
 .book-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .3s}
-.book-item:hover{transform:translateY(-5px);border-color:rgba(215,174,74,.4);box-shadow:0 18px 50px rgba(0,0,0,.7),0 0 24px rgba(215,174,74,.06)}
+.book-item:hover{transform:translateY(-5px);border-color:rgba(215,174,74,.4);box-shadow:0 16px 44px rgba(0,0,0,.7),0 0 20px rgba(215,174,74,.06)}
 .book-item:hover::before{opacity:1}
-.book-cover{width:100%;height:140px;background:linear-gradient(135deg,var(--wine),#140604);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative}
+.book-cover{width:100%;height:130px;background:linear-gradient(135deg,var(--wine),#140604);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative}
 .book-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(215,174,74,.08))}
-.book-cover-text{font-family:'Cormorant+Garamond',serif;font-size:.65rem;color:var(--gold);text-align:center;letter-spacing:1px;padding:8px;line-height:1.4;font-style:italic}
-.book-item h3{font-family:'Cormorant+Garamond',serif;font-size:1.05rem;color:var(--marble);margin-bottom:5px;font-weight:600}
-.book-item .book-desc{font-size:.76rem;color:var(--text-dim);margin-bottom:10px;line-height:1.6;font-style:italic}
+.book-cover-text{font-family:'Cormorant+Garamond',serif;font-size:.62rem;color:var(--gold);text-align:center;letter-spacing:1px;padding:8px;line-height:1.4;font-style:italic}
+.book-item h3{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--marble);margin-bottom:4px;font-weight:600}
+.book-item .book-desc{font-size:.74rem;color:var(--text-dim);margin-bottom:9px;line-height:1.6;font-style:italic}
 .book-meta{display:flex;justify-content:space-between;align-items:center}
-.book-price{font-size:1rem;color:var(--gold);font-weight:600}
-.btn-buy{background:var(--glass);border:1px solid var(--glass-border);color:var(--gold);padding:6px 14px;border-radius:2px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.book-price{font-size:.95rem;color:var(--gold);font-weight:600}
+.btn-buy{background:var(--glass);border:1px solid var(--glass-border);color:var(--gold);padding:6px 13px;border-radius:2px;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
 .btn-buy:hover{background:var(--gold);color:#020202}
 
 /* PERSONALITY TEST */
 .test-section{background:var(--charcoal)}
-.test-container{max-width:680px;margin:0 auto;text-align:center}
-.quiz-box{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:40px;margin-top:40px;text-align:left}
-.question-progress{font-size:.65rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:.7}
-.question-text{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--marble);margin-bottom:28px;line-height:1.4}
-.question-options{display:flex;flex-direction:column;gap:10px}
-.option-btn{background:var(--obsidian);border:1px solid var(--glass-border);color:var(--text-dim);padding:14px 18px;border-radius:5px;text-align:left;font-size:.85rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:10px}
+.test-container{max-width:660px;margin:0 auto;text-align:center}
+.quiz-box{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:36px;margin-top:36px;text-align:left}
+.question-progress{font-size:.62rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:7px;opacity:.7}
+.question-text{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;color:var(--marble);margin-bottom:24px;line-height:1.4}
+.question-options{display:flex;flex-direction:column;gap:9px}
+.option-btn{background:var(--obsidian);border:1px solid var(--glass-border);color:var(--text-dim);padding:13px 16px;border-radius:4px;text-align:left;font-size:.82rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:9px}
 .option-btn:hover{border-color:var(--gold);color:var(--text);background:var(--glass)}
 .option-btn input{display:none}
 .option-btn.selected{border-color:var(--gold);color:var(--gold);background:var(--glass)}
-.quiz-nav{display:flex;justify-content:space-between;margin-top:28px}
-.btn-quiz{background:transparent;border:1px solid var(--glass-border);color:var(--text-dim);padding:9px 20px;border-radius:3px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.quiz-nav{display:flex;justify-content:space-between;margin-top:24px}
+.btn-quiz{background:transparent;border:1px solid var(--glass-border);color:var(--text-dim);padding:8px 18px;border-radius:3px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
 .btn-quiz:hover{border-color:var(--gold);color:var(--gold)}
 .btn-quiz.next{background:var(--gold);color:#020202;border-color:var(--gold)}
-.btn-quiz.next:hover{box-shadow:0 6px 24px rgba(215,174,74,.25)}
-.result-archetype{display:none;text-align:center;padding:40px}
-.result-archetype h2{font-family:'Cormorant+Garamond',serif;font-size:2.2rem;color:var(--gold);margin-bottom:6px;font-style:italic}
-.result-archetype .result-type{font-size:.6rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:20px}
-.result-archetype .result-desc{color:var(--text-dim);font-size:.9rem;line-height:1.8;max-width:460px;margin:0 auto 28px;font-style:italic}
-.email-gate{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:28px;text-align:center}
-.email-gate p{font-size:.8rem;color:var(--text-dim);margin-bottom:14px}
-.email-gate input{width:100%;max-width:340px;padding:11px 14px;background:var(--deep);border:1px solid var(--glass-border);color:var(--marble);border-radius:3px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.btn-quiz.next:hover{box-shadow:0 6px 20px rgba(215,174,74,.2)}
+.result-archetype{display:none;text-align:center;padding:36px}
+.result-archetype h2{font-family:'Cormorant+Garamond',serif;font-size:2rem;color:var(--gold);margin-bottom:5px;font-style:italic}
+.result-archetype .result-type{font-size:.58rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:18px}
+.result-archetype .result-desc{color:var(--text-dim);font-size:.86rem;line-height:1.8;max-width:440px;margin:0 auto 24px;font-style:italic}
+.email-gate{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:24px;text-align:center}
+.email-gate p{font-size:.78rem;color:var(--text-dim);margin-bottom:12px}
+.email-gate input{width:100%;max-width:320px;padding:10px 13px;background:var(--deep);border:1px solid var(--glass-border);color:var(--marble);border-radius:3px;font-size:.82rem;margin-bottom:9px;text-align:center}
 .email-gate input:focus{outline:none;border-color:var(--gold)}
 
 /* MIND MAP */
 .mindmap-section{background:var(--deep);overflow:hidden}
-.mindmap-container{position:relative;max-width:860px;margin:56px auto 0;aspect-ratio:16/9}
+.mindmap-container{position:relative;max-width:820px;margin:52px auto 0;aspect-ratio:16/9}
 .mindmap-svg{width:100%;height:100%}
-.mindmap-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;background:radial-gradient(circle,rgba(215,174,74,.15),rgba(61,15,10,.25));border:2px solid rgba(215,174,74,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;transition:all .3s}
-.mindmap-center:hover{transform:translate(-50%,-50%) scale(1.1);box-shadow:0 0 36px rgba(215,174,74,.25)}
-.mindmap-center span{font-family:'Cormorant+Garamond',serif;font-size:.6rem;color:var(--gold);text-align:center;letter-spacing:1px;line-height:1.3;text-transform:uppercase}
-.mindmap-node{position:absolute;width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .4s;z-index:2}
+.mindmap-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:105px;height:105px;background:radial-gradient(circle,rgba(215,174,74,.15),rgba(61,15,10,.25));border:2px solid rgba(215,174,74,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;transition:all .3s}
+.mindmap-center:hover{transform:translate(-50%,-50%) scale(1.1);box-shadow:0 0 32px rgba(215,174,74,.25)}
+.mindmap-center span{font-family:'Cormorant+Garamond',serif;font-size:.58rem;color:var(--gold);text-align:center;letter-spacing:1px;line-height:1.3;text-transform:uppercase}
+.mindmap-node{position:absolute;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .4s;z-index:2}
 .mindmap-node:hover{transform:scale(1.15)}
-.mindmap-node span{font-size:.58rem;letter-spacing:1px;text-transform:uppercase;color:var(--marble);text-align:center;line-height:1.3;padding:6px}
+.mindmap-node span{font-size:.56rem;letter-spacing:1px;text-transform:uppercase;color:var(--marble);text-align:center;line-height:1.3;padding:5px}
 .node-philosophy{top:4%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(215,174,74,.12),rgba(215,174,74,.04));border:1px solid rgba(215,174,74,.35)}
 .node-identity{top:14%;right:7%;background:radial-gradient(circle,rgba(215,174,74,.12),rgba(215,174,74,.04));border:1px solid rgba(215,174,74,.35)}
 .node-beliefs{top:40%;right:1%;background:radial-gradient(circle,rgba(61,15,10,.35),rgba(61,15,10,.15));border:1px solid rgba(215,174,74,.25)}
@@ -118,218 +127,262 @@ section{padding:110px 40px;position:relative}
 .node-leadership{top:40%;left:1%;background:radial-gradient(circle,rgba(61,15,10,.35),rgba(61,15,10,.15));border:1px solid rgba(215,174,74,.25)}
 .mindmap-modal{position:fixed;inset:0;background:rgba(2,2,2,.96);z-index:100;display:none;align-items:center;justify-content:center;backdrop-filter:blur(20px)}
 .mindmap-modal.active{display:flex}
-.mindmap-modal-content{background:var(--charcoal);border:1px solid var(--glass-border);border-radius:10px;padding:44px;max-width:520px;text-align:center;position:relative}
-.mindmap-modal-content h3{font-family:'Cormorant+Garamond',serif;font-size:1.6rem;color:var(--gold);margin-bottom:7px;font-style:italic}
-.mindmap-modal-content .modal-tag{font-size:.6rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:18px}
-.mindmap-modal-content p{color:var(--text-dim);line-height:1.8;font-size:.88rem;font-style:italic}
-.mindmap-modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text-dim);font-size:1.4rem;cursor:pointer}
+.mindmap-modal-content{background:var(--charcoal);border:1px solid var(--glass-border);border-radius:10px;padding:40px;max-width:500px;text-align:center;position:relative}
+.mindmap-modal-content h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--gold);margin-bottom:6px;font-style:italic}
+.mindmap-modal-content .modal-tag{font-size:.58rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:16px}
+.mindmap-modal-content p{color:var(--text-dim);line-height:1.8;font-size:.85rem;font-style:italic}
+.mindmap-modal-close{position:absolute;top:13px;right:16px;background:none;border:none;color:var(--text-dim);font-size:1.4rem;cursor:pointer}
 .mindmap-modal-close:hover{color:var(--gold)}
 
 /* DAILY WISDOM */
 .wisdom-section{background:var(--charcoal)}
-.wisdom-container{max-width:760px;margin:0 auto;text-align:center}
-.wisdom-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:56px 44px;margin-top:40px;position:relative}
+.wisdom-container{max-width:720px;margin:0 auto;text-align:center}
+.wisdom-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:52px 40px;margin-top:36px;position:relative}
 .wisdom-card::before{content:'';position:absolute;inset:0;border-radius:12px;background:linear-gradient(135deg,var(--gold),transparent 38%,transparent 62%,var(--wine));z-index:-1;opacity:.4}
-.wisdom-quote{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--marble);line-height:1.6;margin-bottom:20px;font-style:italic}
-.wisdom-quote::before{content:'\201C';font-size:3.5rem;color:var(--gold);opacity:.35;display:block;line-height:.5;margin-bottom:12px}
-.wisdom-source{font-size:.65rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:28px}
-.wisdom-refresh{background:var(--obsidian);border:1px solid var(--glass-border);color:var(--text-dim);padding:9px 18px;border-radius:3px;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+.wisdom-quote{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.2rem,3vw,1.8rem);color:var(--marble);line-height:1.6;margin-bottom:18px;font-style:italic}
+.wisdom-quote::before{content:'\201C';font-size:3.2rem;color:var(--gold);opacity:.35;display:block;line-height:.5;margin-bottom:10px}
+.wisdom-source{font-size:.62rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+.wisdom-refresh{background:var(--obsidian);border:1px solid var(--glass-border);color:var(--text-dim);padding:8px 16px;border-radius:3px;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:7px}
 .wisdom-refresh:hover{border-color:var(--gold);color:var(--gold)}
-.wisdom-date{font-size:.72rem;color:var(--text-dim);margin-top:20px;font-style:italic}
+.wisdom-date{font-size:.7rem;color:var(--text-dim);margin-top:18px;font-style:italic}
 
 /* AUDIO */
 .audio-section{background:var(--deep)}
-.audio-container{max-width:560px;margin:0 auto;text-align:center}
-.audio-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:40px;margin-top:40px}
-.audio-title{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;color:var(--gold);margin-bottom:6px;font-style:italic}
-.audio-subtitle{font-size:.75rem;color:var(--text-dim);margin-bottom:28px;letter-spacing:1px}
-.audio-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
-.audio-mode{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:18px 10px;cursor:pointer;transition:all .3s;text-align:center}
+.audio-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:36px;margin-top:36px}
+.audio-title{font-family:'Cormorant+Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:5px;font-style:italic}
+.audio-subtitle{font-size:.72rem;color:var(--text-dim);margin-bottom:24px;letter-spacing:1px}
+.audio-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px}
+.audio-mode{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:5px;padding:16px 8px;cursor:pointer;transition:all .3s;text-align:center}
 .audio-mode:hover,.audio-mode.active{border-color:var(--gold);background:var(--glass)}
-.audio-mode i{font-size:1.2rem;color:var(--gold);margin-bottom:6px;display:block}
-.audio-mode span{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+.audio-mode i{font-size:1.1rem;color:var(--gold);margin-bottom:5px;display:block}
+.audio-mode span{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
 .audio-mode.active span{color:var(--gold)}
-.audio-controls{display:flex;align-items:center;justify-content:center;gap:14px}
-.audio-play{width:52px;height:52px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.audio-play:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(215,174,74,.25)}
-.audio-play i{color:#020202;font-size:1.1rem}
+.audio-controls{display:flex;align-items:center;justify-content:center;gap:13px}
+.audio-play{width:50px;height:50px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.audio-play:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(215,174,74,.25)}
+.audio-play i{color:#020202;font-size:1rem}
 
 /* JOURNAL */
 .journal-section{background:var(--charcoal)}
-.journal-container{max-width:860px;margin:0 auto}
-.journal-intro{text-align:center;margin-bottom:52px}
-.journal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.journal-page{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:28px;transition:all .4s;position:relative;cursor:pointer}
+.journal-container{max-width:820px;margin:0 auto}
+.journal-intro{text-align:center;margin-bottom:48px}
+.journal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.journal-page{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:24px;transition:all .4s;position:relative;cursor:pointer}
 .journal-page.locked{opacity:.45;pointer-events:none}
-.journal-page.locked::after{content:'🔒';position:absolute;top:14px;right:14px;font-size:1.1rem}
-.journal-page:hover:not(.locked){border-color:rgba(215,174,74,.4);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.5)}
-.journal-page h3{font-family:'Cormorant+Garamond',serif;font-size:1.1rem;color:var(--gold);margin-bottom:7px;font-style:italic}
-.journal-page p{font-size:.8rem;color:var(--text-dim);line-height:1.7;font-style:italic}
-.journal-page .page-num{font-size:.62rem;letter-spacing:3px;color:var(--text-dim);margin-top:14px;text-transform:uppercase}
-.journal-unlock{text-align:center;margin-top:28px}
-.journal-unlock p{color:var(--text-dim);font-size:.8rem;margin-bottom:14px;font-style:italic}
+.journal-page.locked::after{content:'🔒';position:absolute;top:13px;right:13px;font-size:1rem}
+.journal-page:hover:not(.locked){border-color:rgba(215,174,74,.4);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.5)}
+.journal-page h3{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--gold);margin-bottom:6px;font-style:italic}
+.journal-page p{font-size:.78rem;color:var(--text-dim);line-height:1.7;font-style:italic}
+.journal-page .page-num{font-size:.6rem;letter-spacing:3px;color:var(--text-dim);margin-top:12px;text-transform:uppercase}
+.journal-unlock{text-align:center;margin-top:26px}
+.journal-unlock p{color:var(--text-dim);font-size:.78rem;margin-bottom:12px;font-style:italic}
 
 /* MEMBERSHIP */
 .membership-section{background:var(--deep)}
 .membership-container{max-width:960px;margin:0 auto}
-.membership-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px}
-.membership-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:40px;text-align:center;transition:all .4s;position:relative}
+.membership-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px}
+.membership-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:36px;text-align:center;transition:all .4s;position:relative}
 .membership-card.featured{border-color:rgba(215,174,74,.5);transform:scale(1.03)}
-.membership-card.featured::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#020202;font-size:.58rem;letter-spacing:2px;padding:3px 14px;font-weight:700}
-.membership-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.6rem;color:var(--marble);margin-bottom:4px}
-.membership-price{font-size:2.8rem;color:var(--gold);font-weight:300;margin:18px 0}
-.membership-price span{font-size:.9rem;color:var(--text-dim)}
-.membership-features{list-style:none;text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:10px}
-.membership-features li{color:var(--text-dim);font-size:.82rem;display:flex;align-items:center;gap:9px}
-.membership-features li i{color:var(--gold);font-size:.7rem}
+.membership-card.featured::before{content:'BEST VALUE';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:#020202;font-size:.55rem;letter-spacing:2px;padding:3px 13px;font-weight:700}
+.membership-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--marble);margin-bottom:3px}
+.membership-price{font-size:2.6rem;color:var(--gold);font-weight:300;margin:16px 0}
+.membership-price span{font-size:.85rem;color:var(--text-dim)}
+.membership-price .price-note{font-size:.7rem;color:var(--text-dim);display:block;margin-top:4px;font-weight:400}
+.membership-features{list-style:none;text-align:left;margin:18px 0;display:flex;flex-direction:column;gap:9px}
+.membership-features li{color:var(--text-dim);font-size:.79rem;display:flex;align-items:center;gap:8px}
+.membership-features li i{color:var(--gold);font-size:.68rem}
 .membership-features li.disabled{opacity:.35}
 .membership-features li.disabled i{color:var(--text-dim)}
+.membership-card .btn-primary,.membership-card .btn-ghost{width:100%;display:block;text-align:center;margin-top:14px;text-decoration:none}
 
-/* PHILOSOPHY TIMELINE */
-.timeline-section{background:var(--charcoal);overflow:hidden}
-.timeline-container{max-width:1100px;margin:56px auto 0;position:relative}
-.timeline-line{position:absolute;top:36px;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.3}
-.timeline-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.timeline-item{text-align:center;position:relative;padding:0 6px}
-.timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--gold);margin:28px auto 14px;position:relative;z-index:2;box-shadow:0 0 16px rgba(215,174,74,.25)}
-.timeline-item h4{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--marble);margin-bottom:3px;font-weight:600}
-.timeline-item .era{font-size:.6rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:7px}
-.timeline-item p{font-size:.74rem;color:var(--text-dim);line-height:1.6;font-style:italic}
+/* PURCHASE SECTION */
+.purchase-section{background:var(--charcoal);padding:100px 40px;text-align:center}
+.purchase-container{max-width:560px;margin:0 auto}
+.purchase-section .eyebrow{font-size:.62rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.8}
+.purchase-section h2{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;margin-bottom:14px;color:var(--marble)}
+.purchase-section .purchase-desc{color:var(--text-dim);font-size:.88rem;line-height:1.8;font-style:italic;margin-bottom:36px}
+.pricing-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:40px;text-align:center;position:relative;overflow:hidden}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--wine))}
+.pricing-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;color:var(--marble);margin-bottom:8px}
+.pricing-card .price{font-family:'Cormorant+Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;margin:12px 0}
+.pricing-card .price span{font-size:1rem;color:var(--text-dim);font-weight:400}
+.pricing-card ul{list-style:none;text-align:left;margin:16px 0 24px;display:flex;flex-direction:column;gap:8px}
+.pricing-card ul li{font-size:.82rem;color:var(--text-dim);display:flex;align-items:center;gap:8px}
+.pricing-card ul li i{color:var(--gold);font-size:.65rem}
+.pricing-card .btn-primary{width:100%;display:block;text-align:center;text-decoration:none}
+.pricing-card .secure-note{font-size:.68rem;color:var(--text-dim);margin-top:14px;font-style:italic}
 
-/* PHILOSOPHY TIMELINE DETAIL */
-.philosophers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1200px;margin:48px auto 0}
-.philosopher-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:8px;padding:28px;transition:all .3s;cursor:pointer}
-.philosopher-card:hover{border-color:rgba(215,174,74,.4);transform:translateY(-4px)}
-.philosopher-card .phil-icon{font-size:2rem;margin-bottom:12px}
-.philosopher-card h4{font-family:'Cormorant+Garamond',serif;font-size:1.2rem;color:var(--marble);margin-bottom:3px;font-weight:600}
-.philosopher-card .phil-era{font-size:.6rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
-.philosopher-card .phil-ideas{font-size:.8rem;color:var(--text-dim);line-height:1.7;margin-bottom:12px;font-style:italic}
-.philosopher-card .phil-quote{font-family:'Cormorant+Garamond',serif;font-size:.9rem;color:var(--gold);font-style:italic;border-left:2px solid var(--gold);padding-left:12px;margin-bottom:10px;line-height:1.5}
-.philosopher-card .phil-influence{font-size:.65rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase}
+/* NEWSLETTER */
+.newsletter-section{background:var(--deep)}
+.newsletter-container{max-width:620px;margin:0 auto;text-align:center}
+.newsletter-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:44px 36px;margin-top:36px}
+.newsletter-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--gold);margin-bottom:4px;font-style:italic}
+.newsletter-card .letter-name{font-size:.62rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:14px}
+.newsletter-card .letter-desc{font-size:.85rem;color:var(--text-dim);line-height:1.8;font-style:italic;margin-bottom:22px}
+.newsletter-form{display:flex;gap:9px;max-width:400px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.newsletter-form input{flex:1;min-width:200px;padding:11px 14px;background:var(--obsidian);border:1px solid var(--glass-border);color:var(--marble);border-radius:3px;font-size:.82rem}
+.newsletter-form input:focus{outline:none;border-color:var(--gold)}
+.newsletter-form button{background:var(--gold);border:none;color:#020202;padding:11px 18px;border-radius:3px;font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;white-space:nowrap}
+.newsletter-form button:hover{box-shadow:0 6px 20px rgba(215,174,74,.2)}
 
 /* ARCHIVE */
-.archive-section{background:var(--deep)}
-.archive-intro{text-align:center;margin-bottom:52px}
-.archive-cats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.archive-cat{background:var(--glass);border:1px solid var(--glass-border);color:var(--text-dim);padding:8px 18px;border-radius:20px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.archive-section{background:var(--charcoal)}
+.archive-intro{text-align:center;margin-bottom:48px}
+.archive-cats{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.archive-cat{background:var(--glass);border:1px solid var(--glass-border);color:var(--text-dim);padding:7px 16px;border-radius:20px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
 .archive-cat:hover,.archive-cat.active{border-color:var(--gold);color:var(--gold);background:var(--glass)}
-.archive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1100px;margin:0 auto}
-.archive-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;padding:24px;transition:all .3s;cursor:pointer}
+.archive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.archive-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:5px;padding:22px;transition:all .3s;cursor:pointer}
 .archive-card:hover{border-color:rgba(215,174,74,.4);transform:translateY(-3px)}
-.archive-card h4{font-family:'Cormorant+Garamond',serif;font-size:1.05rem;color:var(--gold);margin-bottom:6px;font-style:italic}
-.archive-card p{font-size:.8rem;color:var(--text-dim);line-height:1.7;font-style:italic}
+.archive-card h4{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--gold);margin-bottom:5px;font-style:italic}
+.archive-card p{font-size:.78rem;color:var(--text-dim);line-height:1.7;font-style:italic}
 
 /* READING PATHS */
-.paths-section{background:var(--charcoal)}
-.paths-container{max-width:800px;margin:0 auto;text-align:center}
-.paths-intro{margin-bottom:48px}
-.path-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:640px;margin:0 auto 40px}
-.path-btn{background:var(--glass);border:1px solid var(--glass-border);border-radius:8px;padding:20px 12px;cursor:pointer;transition:all .3s;text-align:center}
+.paths-section{background:var(--deep)}
+.paths-container{max-width:760px;margin:0 auto;text-align:center}
+.paths-intro{margin-bottom:44px}
+.path-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:600px;margin:0 auto 36px}
+.path-btn{background:var(--glass);border:1px solid var(--glass-border);border-radius:7px;padding:18px 10px;cursor:pointer;transition:all .3s;text-align:center}
 .path-btn:hover{border-color:var(--gold);transform:translateY(-3px)}
-.path-btn i{display:block;font-size:1.4rem;color:var(--gold);margin-bottom:8px}
-.path-btn span{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+.path-btn i{display:block;font-size:1.2rem;color:var(--gold);margin-bottom:7px}
+.path-btn span{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
 .path-btn.active{border-color:var(--gold);background:var(--glass)}
 .path-btn.active span{color:var(--gold)}
-.path-result{background:var(--glass);border:1px solid var(--glass-border);border-radius:8px;padding:36px;max-width:560px;margin:0 auto;display:none;text-align:left}
+.path-result{background:var(--glass);border:1px solid var(--glass-border);border-radius:7px;padding:32px;max-width:520px;margin:0 auto;display:none;text-align:left}
 .path-result.active{display:block}
-.path-result h3{font-family:'Cormorant+Garamond',serif;font-size:1.5rem;color:var(--gold);margin-bottom:6px;font-style:italic}
-.path-result .path-type{font-size:.62rem;letter-spacing:3px;color:var(--text-dim);text-transform:uppercase;margin-bottom:16px}
-.path-result p{font-size:.85rem;color:var(--text-dim);line-height:1.8;font-style:italic;margin-bottom:14px}
-.path-result ol{font-size:.82rem;color:var(--text-dim);line-height:2.2;padding-left:20px;font-style:italic}
+.path-result h3{font-family:'Cormorant+Garamond',serif;font-size:1.4rem;color:var(--gold);margin-bottom:5px;font-style:italic}
+.path-result .path-type{font-size:.6rem;letter-spacing:3px;color:var(--text-dim);text-transform:uppercase;margin-bottom:14px}
+.path-result p{font-size:.82rem;color:var(--text-dim);line-height:1.8;font-style:italic;margin-bottom:12px}
+.path-result ol{font-size:.8rem;color:var(--text-dim);line-height:2.2;padding-left:18px;font-style:italic}
 .path-result li{margin-bottom:4px}
 
-/* WEEKLY LETTER */
-.letter-section{background:var(--deep)}
-.letter-container{max-width:680px;margin:0 auto;text-align:center}
-.letter-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:48px 40px;margin-top:40px}
-.letter-card h3{font-family:'Cormorant+Garamond',serif;font-size:1.6rem;color:var(--gold);margin-bottom:4px;font-style:italic}
-.letter-card .letter-name{font-size:.65rem;letter-spacing:4px;color:var(--text-dim);text-transform:uppercase;margin-bottom:16px}
-.letter-card .letter-desc{font-size:.88rem;color:var(--text-dim);line-height:1.8;font-style:italic;margin-bottom:24px}
-.letter-form{display:flex;gap:10px;max-width:420px;margin:0 auto}
-.letter-form input{flex:1;padding:12px 16px;background:var(--obsidian);border:1px solid var(--glass-border);color:var(--marble);border-radius:3px;font-size:.85rem}
-.letter-form input:focus{outline:none;border-color:var(--gold)}
-.letter-form button{background:var(--gold);border:none;color:#020202;padding:12px 20px;border-radius:3px;font-size:.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:all .3s}
-.letter-form button:hover{box-shadow:0 6px 20px rgba(215,174,74,.25)}
-.letter-sample{background:var(--obsidian);border:1px solid var(--glass-border);border-radius:6px;padding:24px;margin-top:28px;text-align:left}
-.letter-sample h4{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--gold);margin-bottom:10px;font-style:italic}
-.letter-sample p{font-size:.82rem;color:var(--text-dim);line-height:1.8;font-style:italic;margin-bottom:8px}
+/* TIMELINE */
+.timeline-section{background:var(--charcoal);overflow:hidden}
+.timeline-container{max-width:1100px;margin:52px auto 0;position:relative}
+.timeline-line{position:absolute;top:34px;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.25}
+.timeline-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.timeline-item{text-align:center;position:relative;padding:0 5px}
+.timeline-dot{width:13px;height:13px;border-radius:50%;background:var(--gold);margin:26px auto 12px;position:relative;z-index:2;box-shadow:0 0 14px rgba(215,174,74,.25)}
+.timeline-item h4{font-family:'Cormorant+Garamond',serif;font-size:.95rem;color:var(--marble);margin-bottom:2px;font-weight:600}
+.timeline-item .era{font-size:.58rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.timeline-item p{font-size:.72rem;color:var(--text-dim);line-height:1.6;font-style:italic}
+.philosophers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1200px;margin:44px auto 0}
+.philosopher-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:7px;padding:24px;transition:all .3s;cursor:pointer}
+.philosopher-card:hover{border-color:rgba(215,174,74,.4);transform:translateY(-4px)}
+.philosopher-card .phil-icon{font-size:1.8rem;margin-bottom:10px}
+.philosopher-card h4{font-family:'Cormorant+Garamond',serif;font-size:1.1rem;color:var(--marble);margin-bottom:2px;font-weight:600}
+.philosopher-card .phil-era{font-size:.58rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:9px}
+.philosopher-card .phil-ideas{font-size:.76rem;color:var(--text-dim);line-height:1.7;margin-bottom:10px;font-style:italic}
+.philosopher-card .phil-quote{font-family:'Cormorant+Garamond',serif;font-size:.85rem;color:var(--gold);font-style:italic;border-left:2px solid var(--gold);padding-left:10px;margin-bottom:9px;line-height:1.5}
+.philosopher-card .phil-influence{font-size:.62rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase}
 
-/* AI SECTION */
-.ai-section{background:var(--charcoal)}
-.ai-container{max-width:680px;margin:0 auto}
-.ai-chat{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;overflow:hidden;margin-top:28px}
-.ai-messages{min-height:260px;max-height:360px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px}
-.ai-message{background:var(--obsidian);border-radius:6px;padding:12px 16px;max-width:85%;font-size:.84rem;line-height:1.7}
+/* AI */
+.ai-section{background:var(--deep)}
+.ai-container{max-width:660px;margin:0 auto}
+.ai-chat{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;overflow:hidden;margin-top:26px}
+.ai-messages{min-height:240px;max-height:340px;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.ai-message{background:var(--obsidian);border-radius:5px;padding:11px 14px;max-width:85%;font-size:.82rem;line-height:1.7}
 .ai-message.user{align-self:end;background:var(--glass);border:1px solid var(--glass-border)}
 .ai-message.ai{align-self:start;border:1px solid var(--glass-border)}
-.ai-message.ai .ai-label{font-size:.6rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
-.ai-input-row{display:flex;gap:8px;padding:14px;border-top:1px solid var(--glass-border)}
-.ai-input-row input{flex:1;background:var(--obsidian);border:1px solid var(--glass-border);color:var(--marble);padding:11px 14px;border-radius:4px;font-size:.84rem}
+.ai-message.ai .ai-label{font-size:.58rem;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+.ai-input-row{display:flex;gap:7px;padding:12px;border-top:1px solid var(--glass-border)}
+.ai-input-row input{flex:1;background:var(--obsidian);border:1px solid var(--glass-border);color:var(--marble);padding:10px 13px;border-radius:4px;font-size:.82rem}
 .ai-input-row input:focus{outline:none;border-color:var(--gold)}
-.ai-send{background:var(--gold);border:none;color:#020202;padding:11px 18px;border-radius:4px;cursor:pointer;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;transition:all .3s}
-.ai-send:hover{box-shadow:0 6px 20px rgba(215,174,74,.2)}
+.ai-send{background:var(--gold);border:none;color:#020202;padding:10px 16px;border-radius:4px;cursor:pointer;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;transition:all .3s}
+.ai-send:hover{box-shadow:0 6px 18px rgba(215,174,74,.2)}
 
 /* SOCIAL PROOF */
-.proof-section{background:var(--deep)}
+.proof-section{background:var(--charcoal)}
 .proof-container{max-width:1100px;margin:0 auto}
-.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
-.proof-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;padding:24px;transition:all .3s}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:36px}
+.proof-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;padding:22px;transition:all .3s}
 .proof-card:hover{border-color:rgba(215,174,74,.35);transform:translateY(-3px)}
-.proof-card .stars{color:var(--gold);font-size:.75rem;margin-bottom:10px;letter-spacing:2px}
-.proof-card p{font-size:.84rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:14px}
-.proof-card .proof-author{font-size:.74rem;color:var(--gold);letter-spacing:1px}
-.proof-card .proof-role{font-size:.68rem;color:var(--text-dim);margin-top:2px}
+.proof-card .stars{color:var(--gold);font-size:.72rem;margin-bottom:9px;letter-spacing:2px}
+.proof-card p{font-size:.82rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:13px}
+.proof-card .proof-author{font-size:.72rem;color:var(--gold);letter-spacing:1px}
+.proof-card .proof-role{font-size:.66rem;color:var(--text-dim);margin-top:2px}
 
 /* PRODUCTS */
-.products-section{background:var(--charcoal)}
+.products-section{background:var(--deep)}
 .products-container{max-width:1200px;margin:0 auto}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px}
-.product-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;padding:24px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
-.product-card.coming-soon::before{content:'COMING SOON';position:absolute;top:10px;right:-22px;background:var(--wine);color:var(--marble);font-size:.52rem;letter-spacing:2px;padding:2px 24px;transform:rotate(45deg)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+.product-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:6px;padding:22px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.product-card.coming-soon::before{content:'COMING SOON';position:absolute;top:9px;right:-20px;background:var(--wine);color:var(--marble);font-size:.5rem;letter-spacing:2px;padding:2px 22px;transform:rotate(45deg)}
 .product-card:hover{border-color:rgba(215,174,74,.4);transform:translateY(-3px)}
-.product-card .product-icon{font-size:1.8rem;margin-bottom:12px;display:block}
-.product-card h4{font-family:'Cormorant+Garamond',serif;font-size:1rem;color:var(--marble);margin-bottom:6px}
-.product-card p{font-size:.76rem;color:var(--text-dim);line-height:1.6;font-style:italic}
-.product-card .product-status{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:10px}
+.product-card .product-icon{font-size:1.6rem;margin-bottom:10px;display:block}
+.product-card h4{font-family:'Cormorant+Garamond',serif;font-size:.95rem;color:var(--marble);margin-bottom:5px}
+.product-card p{font-size:.74rem;color:var(--text-dim);line-height:1.6;font-style:italic}
+.product-card .product-status{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:9px}
 
-/* ANALYTICS BANNER */
-.analytics-banner{background:var(--deep);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:24px 40px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
-.analytics-stat{text-align:center}
-.analytics-stat .stat-num{font-family:'Cormorant+Garamond',serif;font-size:1.8rem;color:var(--gold);font-weight:600}
-.analytics-stat .stat-label{font-size:.62rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-top:2px}
+/* CONTACT */
+.contact-section{background:var(--deep)}
+.contact-container{max-width:700px;margin:0 auto;text-align:center}
+.contact-container h2{font-family:'Cormorant+Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:300;margin-bottom:8px;color:var(--marble)}
+.contact-container .contact-sub{color:var(--text-dim);font-size:.88rem;line-height:1.8;font-style:italic;margin-bottom:40px}
+.contact-form{background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:36px;text-align:left;max-width:520px;margin:0 auto}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:7px}
+.form-group input,.form-group textarea{width:100%;padding:11px 14px;background:var(--obsidian);border:1px solid var(--glass-border);color:var(--marble);border-radius:4px;font-size:.85rem;font-family:'Inter',sans-serif;resize:none}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{height:100px}
+.form-row{display:flex;gap:12px}
+.form-row .form-group{flex:1}
+.contact-form button{width:100%;margin-top:8px;padding:13px;background:var(--gold);border:none;color:#020202;border-radius:4px;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.contact-form button:hover{box-shadow:0 8px 28px rgba(215,174,74,.25)}
+.contact-info{margin-top:32px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.contact-info a{color:var(--text-dim);font-size:.78rem;text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .3s}
+.contact-info a:hover{color:var(--gold)}
+.contact-info a i{color:var(--gold)}
 
 /* FOOTER */
-footer{background:var(--obsidian);border-top:1px solid var(--glass-border);padding:52px 40px 24px}
-.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
-.footer-brand .logo{font-size:1.2rem;margin-bottom:10px;display:block}
-.footer-brand p{font-size:.78rem;color:var(--text-dim);line-height:1.7;font-style:italic}
-.footer-col h5{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.footer-col a{display:block;color:var(--text-dim);text-decoration:none;font-size:.78rem;margin-bottom:7px;transition:color .3s}
+footer{background:var(--obsidian);border-top:1px solid var(--glass-border);padding:48px 40px 22px}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-brand .logo{font-size:1.15rem;margin-bottom:10px;display:block}
+.footer-brand p{font-size:.75rem;color:var(--text-dim);line-height:1.7;font-style:italic}
+.footer-col h5{font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.footer-col a{display:block;color:var(--text-dim);text-decoration:none;font-size:.75rem;margin-bottom:6px;transition:color .3s}
 .footer-col a:hover{color:var(--gold)}
-.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid var(--glass-border);color:var(--text-dim);font-size:.7rem}
+.footer-social{display:flex;gap:14px;margin-top:14px}
+.footer-social a{color:var(--text-dim);font-size:1rem;transition:color .3s}
+.footer-social a:hover{color:var(--gold)}
+.footer-bottom{text-align:center;padding-top:18px;border-top:1px solid var(--glass-border);color:var(--text-dim);font-size:.68rem}
+
+/* ANALYTICS BANNER */
+.analytics-banner{background:var(--deep);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:22px 40px;display:flex;justify-content:center;gap:44px;flex-wrap:wrap}
+.analytics-stat{text-align:center}
+.analytics-stat .stat-num{font-family:'Cormorant+Garamond',serif;font-size:1.7rem;color:var(--gold);font-weight:600}
+.analytics-stat .stat-label{font-size:.6rem;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-top:2px}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.22,1,.36,1)}
+.reveal{opacity:0;transform:translateY(26px);transition:all .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 @media(max-width:768px){
-nav{padding:12px 20px}
+.announcement-bar{flex-direction:column;gap:8px;font-size:.7rem}
+nav{padding:10px 18px;top:36px}
 .nav-links{display:none}
 section{padding:72px 18px}
-.hero-content h1{font-size:2.2rem}
+.hero-content h1{font-size:2.1rem}
 .membership-grid{grid-template-columns:1fr}
 .timeline-row{grid-template-columns:repeat(3,1fr)}
 .footer-grid{grid-template-columns:1fr 1fr}
 .audio-modes{grid-template-columns:repeat(2,1fr)}
 .book-item{width:100%}
 .path-picker{grid-template-columns:repeat(2,1fr)}
-.analytics-banner{gap:28px}
-.letter-form{flex-direction:column}
+.form-row{flex-direction:column}
+.analytics-banner{gap:24px}
 }
 </style>
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <span>📖 Launch Offer: The Architecture of the Mind ebook is now available — instant PDF download</span>
+  <a href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Buy Now — $19.99</a>
+</div>
+
+<!-- NAV -->
 <nav id="navbar">
   <div class="logo">ARCHITECTURE OF THE MIND</div>
   <ul class="nav-links">
@@ -338,11 +391,10 @@ section{padding:72px 18px}
     <li><a href="#mindmap">Mind Map</a></li>
     <li><a href="#wisdom">Wisdom</a></li>
     <li><a href="#archive">Archive</a></li>
-    <li><a href="#paths">Paths</a></li>
     <li><a href="#membership">Membership</a></li>
     <li><a href="#journal">Journal</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">Begin The Journey</button>
+  <button class="nav-cta" onclick="document.getElementById('purchase').scrollIntoView({behavior:'smooth'})">Get The Ebook</button>
 </nav>
 
 <!-- HERO -->
@@ -369,23 +421,23 @@ section{padding:72px 18px}
   <div class="vault-intro">
     <span class="section-tag">The Collection</span>
     <h2 class="section-title">The Great <strong>Library</strong></h2>
-    <p class="section-desc" style="margin:0 auto">Ancient illuminated manuscripts for the modern mind.</p>
+    <p class="section-desc" style="margin:0 auto;font-style:italic">Ancient illuminated manuscripts for the modern mind.</p>
   </div>
   <div class="book-shelves">
     <div class="shelf-section">
-      <div class="shelf-label">Available Now</div>
+      <div class="shelf-label">Available Now — One-Time Purchase</div>
       <div class="book-row">
         <div class="book-item reveal">
           <div class="book-cover"><div class="book-cover-text">ARCHITECTURE<br>OF THE<br>MIND</div></div>
           <h3>The Architecture of the Mind</h3>
           <p class="book-desc">Master the internal engineering of clarity, purpose, and psychological resilience.</p>
-          <div class="book-meta"><span class="book-price">$19.99</span><button class="btn-buy">Add to Cart</button></div>
+          <div class="book-meta"><span class="book-price">$19.99</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Buy Now</a></div>
         </div>
         <div class="book-item reveal">
           <div class="book-cover" style="background:linear-gradient(135deg,#1A3A2A,#081408)"><div class="book-cover-text">PHILOSOPHY<br>OF<br>WEALTH</div></div>
           <h3>The Philosophy of Wealth</h3>
           <p class="book-desc">Redefine your relationship with money through timeless Stoic and Aristotelian principles.</p>
-          <div class="book-meta"><span class="book-price">$19.99</span><button class="btn-buy">Add to Cart</button></div>
+          <div class="book-meta"><span class="book-price">$19.99</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Buy Now</a></div>
         </div>
       </div>
     </div>
@@ -396,25 +448,25 @@ section{padding:72px 18px}
           <div class="book-cover" style="background:linear-gradient(135deg,#2A1A3A,#100818)"><div class="book-cover-text">PHILOSOPHY<br>OF<br>POWER</div></div>
           <h3>The Philosophy of Power</h3>
           <p class="book-desc">The ancient art of influence, authority, and strategic thinking.</p>
-          <div class="book-meta"><span class="book-price">Coming Soon</span><button class="btn-buy" disabled>Notify Me</button></div>
+          <div class="book-meta"><span class="book-price">Coming Soon</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Notify Me</a></div>
         </div>
         <div class="book-item reveal" style="opacity:.55">
           <div class="book-cover" style="background:linear-gradient(135deg,#3A1A1A,#140606)"><div class="book-cover-text">PHILOSOPHY<br>OF<br>RELATIONSHIPS</div></div>
           <h3>The Philosophy of Relationships</h3>
           <p class="book-desc">Aristotle, Plato, and the Stoics on love, friendship, and human connection.</p>
-          <div class="book-meta"><span class="book-price">Coming Soon</span><button class="btn-buy" disabled>Notify Me</button></div>
+          <div class="book-meta"><span class="book-price">Coming Soon</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Notify Me</a></div>
         </div>
         <div class="book-item reveal" style="opacity:.55">
           <div class="book-cover" style="background:linear-gradient(135deg,#2A2A1A,#101008)"><div class="book-cover-text">PHILOSOPHY<br>OF<br>LEADERSHIP</div></div>
           <h3>The Philosophy of Leadership</h3>
           <p class="book-desc">What Marcus Aurelius, Seneca, and Cato can teach modern leaders.</p>
-          <div class="book-meta"><span class="book-price">Coming Soon</span><button class="btn-buy" disabled>Notify Me</button></div>
+          <div class="book-meta"><span class="book-price">Coming Soon</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Notify Me</a></div>
         </div>
         <div class="book-item reveal" style="opacity:.55">
           <div class="book-cover" style="background:linear-gradient(135deg,#1A1A2A,#080814)"><div class="book-cover-text">PHILOSOPHY<br>OF<br>DESTINY</div></div>
           <h3>The Philosophy of Destiny</h3>
           <p class="book-desc">Fate, free will, and the ancient debate that shaped Western civilization.</p>
-          <div class="book-meta"><span class="book-price">Coming Soon</span><button class="btn-buy" disabled>Notify Me</button></div>
+          <div class="book-meta"><span class="book-price">Coming Soon</span><a class="btn-buy" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer">Notify Me</a></div>
         </div>
       </div>
     </div>
@@ -426,7 +478,7 @@ section{padding:72px 18px}
   <div class="test-container">
     <span class="section-tag">Free Assessment</span>
     <h2 class="section-title">Discover Your <strong>Philosophical Archetype</strong></h2>
-    <p class="section-desc" style="margin:0 auto">3 questions. 5 possible results. Find your philosophical archetype.</p>
+    <p class="section-desc" style="margin:0 auto">3 questions. 5 possible results. Find your archetype.</p>
     <div class="quiz-box">
       <div id="quizScreen">
         <div class="question-progress" id="qProgress">Question 1 of 3</div>
@@ -459,14 +511,14 @@ section{padding:72px 18px}
     <p class="section-desc" style="margin:0 auto;text-align:center">Click any node to explore the interconnected domains of human consciousness.</p>
   </div>
   <div class="mindmap-container">
-    <svg class="mindmap-svg" viewBox="0 0 860 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="430" y1="240" x2="430" y2="50" stroke="rgba(215,174,74,0.2)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="700" y2="95" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="800" y2="230" stroke="rgba(215,174,74,0.12)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="700" y2="375" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="430" y2="420" stroke="rgba(215,174,74,0.2)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="160" y2="375" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
-      <line x1="430" y1="240" x2="60" y2="230" stroke="rgba(215,174,74,0.12)" stroke-width="1"/>
+    <svg class="mindmap-svg" viewBox="0 0 820 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="410" y1="230" x2="410" y2="48" stroke="rgba(215,174,74,0.2)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="670" y2="90" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="770" y2="220" stroke="rgba(215,174,74,0.12)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="670" y2="360" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="410" y2="402" stroke="rgba(215,174,74,0.2)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="150" y2="360" stroke="rgba(215,174,74,0.16)" stroke-width="1"/>
+      <line x1="410" y1="230" x2="50" y2="220" stroke="rgba(215,174,74,0.12)" stroke-width="1"/>
     </svg>
     <div class="mindmap-center" onclick="openNode('consciousness')"><span>Human<br>Consciousness</span></div>
     <div class="mindmap-node node-philosophy" onclick="openNode('philosophy')"><span>Philosophy</span></div>
@@ -502,9 +554,9 @@ section{padding:72px 18px}
   </div>
 </section>
 
-<!-- AUDIO EXPERIENCE -->
+<!-- AUDIO -->
 <section class="audio-section" id="audio">
-  <div class="audio-container">
+  <div class="wisdom-container">
     <span class="section-tag" style="display:block;text-align:center">Immersive Experience</span>
     <h2 class="section-title" style="text-align:center"><strong>Temple</strong> Mode</h2>
     <div class="audio-card">
@@ -525,7 +577,29 @@ section{padding:72px 18px}
   </div>
 </section>
 
-<!-- ORION'S JOURNAL -->
+<!-- PURCHASE SECTION -->
+<section class="purchase-section" id="purchase">
+  <div class="purchase-container">
+    <div class="eyebrow">Begin The Reconstruction</div>
+    <h2>Get The Architecture of the Mind</h2>
+    <p class="purchase-desc">A premium digital philosophy ebook combining ancient wisdom, subconscious psychology, Stoicism, and transformational storytelling. Instant PDF download.</p>
+    <div class="pricing-card">
+      <h3>The Architecture of the Mind</h3>
+      <div class="price">$19.99 <span>one-time</span></div>
+      <ul>
+        <li><i class="fas fa-check"></i> Instant PDF download</li>
+        <li><i class="fas fa-check"></i> Reflection exercises included</li>
+        <li><i class="fas fa-check"></i> Future edition updates free</li>
+        <li><i class="fas fa-check"></i> Audiobook-ready structure</li>
+        <li><i class="fas fa-check"></i> 30-day money-back guarantee</li>
+      </ul>
+      <a class="btn-primary" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none">Buy The Ebook — $19.99</a>
+      <p class="secure-note">🔒 Secure checkout powered by Gumroad</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
 <section class="journal-section" id="journal">
   <div class="journal-container">
     <div class="journal-intro">
@@ -556,7 +630,7 @@ section{padding:72px 18px}
       </div>
     </div>
     <div class="journal-unlock">
-      <p>Unlock all entries with a Premium membership</p>
+      <p>Unlock all entries with Premium Membership</p>
       <a href="#membership" class="btn-primary" style="display:inline-block;text-decoration:none" onclick="document.getElementById('membership').scrollIntoView({behavior:'smooth'})">Get Premium Access</a>
     </div>
   </div>
@@ -581,14 +655,15 @@ section{padding:72px 18px}
           <li class="disabled"><i class="fas fa-times"></i> Community access</li>
           <li class="disabled"><i class="fas fa-times"></i> Orion's Journal (full)</li>
         </ul>
-        <button class="btn-ghost" style="width:100%;display:block;text-align:center;text-decoration:none;margin-top:8px">Start Free</button>
+        <a href="#newsletter" class="btn-ghost" style="display:block;text-align:center;text-decoration:none" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Join Free</a>
       </div>
       <div class="membership-card featured">
         <h3>Philosopher</h3>
-        <div class="membership-price">$9.99 <span>/month</span></div>
+        <div class="membership-price">$50 <span>/month</span></div>
+        <div class="price-note">or $450/year (save $150)</div>
         <ul class="membership-features">
           <li><i class="fas fa-check"></i> Everything in Seeker</li>
-          <li><i class="fas fa-check"></i> All ebooks (current & future)</li>
+          <li><i class="fas fa-check"></i> All current & future ebooks</li>
           <li><i class="fas fa-check"></i> Audio lessons & meditations</li>
           <li><i class="fas fa-check"></i> Private community access</li>
           <li><i class="fas fa-check"></i> Orion's Journal (all entries)</li>
@@ -596,123 +671,35 @@ section{padding:72px 18px}
           <li><i class="fas fa-check"></i> Monthly live masterclass</li>
           <li><i class="fas fa-check"></i> Cancel anytime</li>
         </ul>
-        <button class="btn-primary" style="width:100%;display:block;text-align:center;text-decoration:none;margin-top:14px">Join Philosophy</button>
+        <a class="btn-primary" href="https://YOURSTORE.gumroad.com/l/architecture-of-the-mind" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;margin-top:14px">Join Philosophy — $50/mo</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PHILOSOPHY TIMELINE -->
+<!-- TIMELINE -->
 <section class="timeline-section" id="timeline">
   <div class="timeline-container">
     <span class="section-tag" style="display:block;text-align:center">The Evolution of Ideas</span>
     <h2 class="section-title" style="text-align:center">The Philosophical <strong>Timeline</strong></h2>
     <div class="timeline-row">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="era">399 BC</div>
-        <h4>Socrates</h4>
-        <p>The Socratic method: question everything, know thyself.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="era">380 BC</div>
-        <h4>Plato</h4>
-        <p>The Cave, the Forms, the immortality of the soul.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="era">335 BC</div>
-        <h4>Aristotle</h4>
-        <p>Logic, virtue, and the golden mean of excellence.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="era">300 BC</div>
-        <h4>The Stoics</h4>
-        <p>Epictetus, Zeno, and the art of inner freedom.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="era">121 AD</div>
-        <h4>Marcus Aurelius</h4>
-        <p>The philosopher-emperor and Meditations.</p>
-      </div>
+      <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="era">399 BC</div><h4>Socrates</h4><p>The Socratic method: question everything, know thyself.</p></div>
+      <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="era">380 BC</div><h4>Plato</h4><p>The Cave, the Forms, the immortality of the soul.</p></div>
+      <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="era">335 BC</div><h4>Aristotle</h4><p>Logic, virtue, and the golden mean of excellence.</p></div>
+      <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="era">300 BC</div><h4>The Stoics</h4><p>Epictetus, Zeno, and the art of inner freedom.</p></div>
+      <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="era">121 AD</div><h4>Marcus Aurelius</h4><p>The philosopher-emperor and Meditations.</p></div>
     </div>
   </div>
   <div class="philosophers-grid">
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">🏛️</div>
-      <h4>Socrates</h4>
-      <div class="phil-era">470–399 BC · Athens</div>
-      <div class="phil-ideas">The Socratic method · Know thyself · The unexamined life · Irony & midwifery of ideas</div>
-      <div class="phil-quote">"I know that I know nothing."</div>
-      <div class="phil-influence">Influence: ★★★★★</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">📜</div>
-      <h4>Plato</h4>
-      <div class="phil-era">428–348 BC · Athens</div>
-      <div class="phil-ideas">The Cave allegory · Theory of Forms · Tripartite soul · Philosopher-kings</div>
-      <div class="phil-quote">"The unexamined life is not worth living."</div>
-      <div class="phil-influence">Influence: ★★★★★</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">📚</div>
-      <h4>Aristotle</h4>
-      <div class="phil-era">384–322 BC · Stagira</div>
-      <div class="phil-ideas">Golden mean · Virtue ethics · Categories · Four causes · Logic as organon</div>
-      <div class="phil-quote">"We are what we repeatedly do. Excellence, then, is not an act but a habit."</div>
-      <div class="phil-influence">Influence: ★★★★★</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">🔥</div>
-      <h4>Epictetus</h4>
-      <div class="phil-era">50–135 AD · Phrygia</div>
-      <div class="phil-ideas">Dichotomy of control · Stoic freedom · Inner citadel · Voluntary vs involuntary</div>
-      <div class="phil-quote">"First say to yourself what you would be; and then do what you have to do."</div>
-      <div class="phil-influence">Influence: ★★★★☆</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">⚔️</div>
-      <h4>Seneca</h4>
-      <div class="phil-era">4 BC–65 AD · Rome</div>
-      <div class="phil-ideas">On the shortness of life · Moral letters · Anger management · Practical Stoicism</div>
-      <div class="phil-quote">"We suffer more in imagination than in reality."</div>
-      <div class="phil-influence">Influence: ★★★★☆</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">👑</div>
-      <h4>Marcus Aurelius</h4>
-      <div class="phil-era">121–180 AD · Rome</div>
-      <div class="phil-ideas">Meditations · The obstacle is the way · Amor fati · Duty without attachment</div>
-      <div class="phil-quote">"Waste no more time arguing about what a good man should be. Be one."</div>
-      <div class="phil-influence">Influence: ★★★★★</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">🦁</div>
-      <h4>Diogenes</h4>
-      <div class="phil-era">412–323 BC · Sinope</div>
-      <div class="phil-ideas">Cynicism · Radical simplicity · Living according to nature · The famous tub</div>
-      <div class="phil-quote">"I am not an Athenian or a Greek, but a citizen of the world."</div>
-      <div class="phil-influence">Influence: ★★★☆☆</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">🌀</div>
-      <h4>Nietzsche</h4>
-      <div class="phil-era">1844–1900 · Röcken</div>
-      <div class="phil-ideas">Übermensch · Will to power · Eternal recurrence · Death of God · Amor fati</div>
-      <div class="phil-quote">"He who has a why to live can bear almost any how."</div>
-      <div class="phil-influence">Influence: ★★★★☆</div>
-    </div>
-    <div class="philosopher-card reveal">
-      <div class="phil-icon">🔮</div>
-      <h4>Carl Jung</h4>
-      <div class="phil-era">1875–1961 · Basel</div>
-      <div class="phil-ideas">Collective unconscious · Archetypes · Shadow work · MBTI foundation · Synchronicity</div>
-      <div class="phil-quote">"Until you make the unconscious conscious, it will direct your life and you will call it fate."</div>
-      <div class="phil-influence">Influence: ★★★★☆</div>
-    </div>
+    <div class="philosopher-card reveal"><div class="phil-icon">🏛️</div><h4>Socrates</h4><div class="phil-era">470–399 BC · Athens</div><div class="phil-ideas">The Socratic method · Know thyself · The unexamined life · Irony & midwifery of ideas</div><div class="phil-quote">"I know that I know nothing."</div><div class="phil-influence">Influence: ★★★★★</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">📜</div><h4>Plato</h4><div class="phil-era">428–348 BC · Athens</div><div class="phil-ideas">The Cave allegory · Theory of Forms · Tripartite soul · Philosopher-kings</div><div class="phil-quote">"The unexamined life is not worth living."</div><div class="phil-influence">Influence: ★★★★★</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">📚</div><h4>Aristotle</h4><div class="phil-era">384–322 BC · Stagira</div><div class="phil-ideas">Golden mean · Virtue ethics · Categories · Four causes · Logic as organon</div><div class="phil-quote">"We are what we repeatedly do. Excellence is a habit."</div><div class="phil-influence">Influence: ★★★★★</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">🔥</div><h4>Epictetus</h4><div class="phil-era">50–135 AD · Phrygia</div><div class="phil-ideas">Dichotomy of control · Stoic freedom · Inner citadel · Voluntary vs involuntary</div><div class="phil-quote">"First say to yourself what you would be; and then do what you have to do."</div><div class="phil-influence">Influence: ★★★★☆</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">⚔️</div><h4>Seneca</h4><div class="phil-era">4 BC–65 AD · Rome</div><div class="phil-ideas">On the shortness of life · Moral letters · Anger management · Practical Stoicism</div><div class="phil-quote">"We suffer more in imagination than in reality."</div><div class="phil-influence">Influence: ★★★★☆</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">👑</div><h4>Marcus Aurelius</h4><div class="phil-era">121–180 AD · Rome</div><div class="phil-ideas">Meditations · The obstacle is the way · Amor fati · Duty without attachment</div><div class="phil-quote">"Waste no more time arguing about what a good man should be. Be one."</div><div class="phil-influence">Influence: ★★★★★</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">🦁</div><h4>Diogenes</h4><div class="phil-era">412–323 BC · Sinope</div><div class="phil-ideas">Cynicism · Radical simplicity · Living according to nature · The famous tub</div><div class="phil-quote">"I am not an Athenian or a Greek, but a citizen of the world."</div><div class="phil-influence">Influence: ★★★☆☆</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">🌀</div><h4>Nietzsche</h4><div class="phil-era">1844–1900 · Röcken</div><div class="phil-ideas">Übermensch · Will to power · Eternal recurrence · Death of God · Amor fati</div><div class="phil-quote">"He who has a why to live can bear almost any how."</div><div class="phil-influence">Influence: ★★★★☆</div></div>
+    <div class="philosopher-card reveal"><div class="phil-icon">🔮</div><h4>Carl Jung</h4><div class="phil-era">1875–1961 · Basel</div><div class="phil-ideas">Collective unconscious · Shadow archetypes · MBTI foundation · Synchronicity</div><div class="phil-quote">"Until you make the unconscious conscious, it will direct your life and you will call it fate."</div><div class="phil-influence">Influence: ★★★★☆</div></div>
   </div>
 </section>
 
@@ -721,7 +708,7 @@ section{padding:72px 18px}
   <div class="archive-intro">
     <span class="section-tag" style="display:block;text-align:center">The Knowledge Base</span>
     <h2 class="section-title" style="text-align:center">The <strong>Archive</strong></h2>
-    <p class="section-desc" style="margin:0 auto;text-align:center">A searchable philosophy database — explore concepts across schools of thought.</p>
+    <p class="section-desc" style="margin:0 auto;text-align:center">Explore concepts across schools of ancient philosophy.</p>
   </div>
   <div class="archive-cats">
     <div class="archive-cat active" onclick="filterArchive(this,'all')">All</div>
@@ -734,42 +721,15 @@ section{padding:72px 18px}
     <div class="archive-cat" onclick="filterArchive(this,'leadership')">Leadership</div>
   </div>
   <div class="archive-grid">
-    <div class="archive-card" data-cat="stoicism">
-      <h4>The Dichotomy of Control</h4>
-      <p>Epictetus's foundational insight: distinguish sharply between what is up to us (our judgments, choices, intentions) and what is not (everything else). This single distinction is the root of Stoic serenity.</p>
-    </div>
-    <div class="archive-card" data-cat="psychology">
-      <h4>The Shadow Archetype</h4>
-      <p>Carl Jung on the shadow: the parts of yourself you deny or repress don't disappear — they project onto others. Integrating the shadow is the essential work of psychological maturity.</p>
-    </div>
-    <div class="archive-card" data-cat="consciousness">
-      <h4>The Cave and the Forms</h4>
-      <p>Plato's allegory maps the structure of reality: the shadow-world of appearances, the fire of reason, and the sun of the Good. Most humans live their entire lives mistaking shadows for truth.</p>
-    </div>
-    <div class="archive-card" data-cat="stoicism">
-      <h4>Amor Fati — Love of Fate</h4>
-      <p>Nietzsche's formula for the highest possible attitude: not merely accepting fate but loving whatever happens. What would it mean to not merely endure your life but embrace it entirely?</p>
-    </div>
-    <div class="archive-card" data-cat="wealth">
-      <h4>The Stoic View of Wealth</h4>
-      <p>True wealth is not the abundance of possessions but the richness of character. Seneca: "It is not the man who has too little, but the man who craves more, that is poor."</p>
-    </div>
-    <div class="archive-card" data-cat="relationships">
-      <h4>The Three Types of Friendship</h4>
-      <p>Aristotle identified friendships of utility, pleasure, and virtue. Only the third — where both parties wish the excellence of the other — endures. Everything else is conditional and temporary.</p>
-    </div>
-    <div class="archive-card" data-cat="leadership">
-      <h4>The Philosopher-King</h4>
-      <p>Plato's radical proposal: society should be governed not by those who crave power but by those who have been trained to understand reality. Leadership as service, not domination.</p>
-    </div>
-    <div class="archive-card" data-cat="power">
-      <h4>The Art of Voluntary Discomfort</h4>
-      <p>The Stoic practice of voluntary hardship — cold showers, fasting, sleeping on the floor — trains the one faculty that matters above all: the ability to be undisturbed by circumstances.</p>
-    </div>
-    <div class="archive-card" data-cat="psychology">
-      <h4>Cognitive Defusion</h4>
-      <p>Modern psychological reframing of the Stoic practice: thoughts are not facts. Observing your thinking — rather than being consumed by it — is the foundation of mental clarity and emotional regulation.</p>
-    </div>
+    <div class="archive-card" data-cat="stoicism"><h4>The Dichotomy of Control</h4><p>Epictetus's foundational insight: distinguish between what is up to us (judgments, choices) and what is not (everything else). This single distinction is the root of Stoic serenity.</p></div>
+    <div class="archive-card" data-cat="psychology"><h4>The Shadow Archetype</h4><p>Carl Jung on the shadow: the parts of yourself you deny don't disappear — they project onto others. Integrating the shadow is the essential work of psychological maturity.</p></div>
+    <div class="archive-card" data-cat="consciousness"><h4>The Cave and the Forms</h4><p>Plato's allegory maps reality's structure: the shadow-world of appearances, the fire of reason, and the sun of the Good. Most humans mistake shadows for truth their entire lives.</p></div>
+    <div class="archive-card" data-cat="stoicism"><h4>Amor Fati — Love of Fate</h4><p>Nietzsche's formula: not merely accepting fate but loving whatever happens. What would it mean to not merely endure your life but embrace it entirely?</p></div>
+    <div class="archive-card" data-cat="wealth"><h4>The Stoic View of Wealth</h4><p>True wealth is not the abundance of possessions but the richness of character. Seneca: "It is not the man who has too little, but the man who craves more, that is poor."</p></div>
+    <div class="archive-card" data-cat="relationships"><h4>The Three Types of Friendship</h4><p>Aristotle: friendships of utility, pleasure, and virtue. Only the third — where both parties wish the excellence of the other — endures. Everything else is conditional and temporary.</p></div>
+    <div class="archive-card" data-cat="leadership"><h4>The Philosopher-King</h4><p>Plato's radical proposal: society should be governed not by those who crave power but by those trained to understand reality. Leadership as service, not domination.</p></div>
+    <div class="archive-card" data-cat="power"><h4>The Art of Voluntary Discomfort</h4><p>The Stoic practice of voluntary hardship — cold showers, fasting, sleeping on the floor — trains the one faculty that matters above all: the ability to be undisturbed by circumstances.</p></div>
+    <div class="archive-card" data-cat="psychology"><h4>Cognitive Defusion</h4><p>Modern psychological reframing of the Stoic practice: thoughts are not facts. Observing your thinking — rather than being consumed by it — is the foundation of mental clarity.</p></div>
   </div>
 </section>
 
@@ -780,45 +740,45 @@ section{padding:72px 18px}
     <h2 class="section-title" style="text-align:center">Choose Your <strong>Reading Path</strong></h2>
     <p class="section-desc" style="margin:0 auto;text-align:center">What are you here to improve?</p>
     <div class="path-picker">
-      <div class="path-btn" onclick="selectPath(this,'mindset')"><i class="fas fa-brain" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Mindset</span></div>
-      <div class="path-btn" onclick="selectPath(this,'wealth')"><i class="fas fa-coins" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Wealth</span></div>
-      <div class="path-btn" onclick="selectPath(this,'relationships')"><i class="fas fa-heart" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Relationships</span></div>
-      <div class="path-btn" onclick="selectPath(this,'discipline')"><i class="fas fa-dumbbell" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Discipline</span></div>
-      <div class="path-btn" onclick="selectPath(this,'leadership')"><i class="fas fa-crown" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Leadership</span></div>
-      <div class="path-btn" onclick="selectPath(this,'purpose')"><i class="fas fa-compass" style="color:var(--gold);font-size:1.3rem;margin-bottom:8px;display:block"></i><span>Purpose</span></div>
+      <div class="path-btn" onclick="selectPath(this,'mindset')"><i class="fas fa-brain" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Mindset</span></div>
+      <div class="path-btn" onclick="selectPath(this,'wealth')"><i class="fas fa-coins" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Wealth</span></div>
+      <div class="path-btn" onclick="selectPath(this,'relationships')"><i class="fas fa-heart" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Relationships</span></div>
+      <div class="path-btn" onclick="selectPath(this,'discipline')"><i class="fas fa-dumbbell" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Discipline</span></div>
+      <div class="path-btn" onclick="selectPath(this,'leadership')"><i class="fas fa-crown" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Leadership</span></div>
+      <div class="path-btn" onclick="selectPath(this,'purpose')"><i class="fas fa-compass" style="color:var(--gold);font-size:1.2rem;margin-bottom:7px;display:block"></i><span>Purpose</span></div>
     </div>
     <div class="path-result" id="pathResult"></div>
   </div>
 </section>
 
-<!-- WEEKLY LETTER -->
-<section class="letter-section" id="letter">
-  <div class="letter-container">
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="newsletter-container">
     <span class="section-tag" style="display:block;text-align:center">Free Newsletter</span>
     <h2 class="section-title" style="text-align:center">The Architect's <strong>Letter</strong></h2>
-    <div class="letter-card">
+    <div class="newsletter-card">
       <h3>The Architect's Letter</h3>
       <div class="letter-name">Weekly Philosophy · Every Sunday Morning</div>
       <p class="letter-desc">One email per week. One philosophy insight. One historical lesson. One practical exercise. One recommended reading. Join thousands of Seekers building the internal architecture of an extraordinary life.</p>
-      <div class="letter-form">
-        <input type="email" placeholder="Enter your email address" id="letterEmail">
-        <button onclick="subscribeLetter()">Subscribe Free</button>
-      </div>
-      <div class="letter-sample">
-        <h4>From This Week's Letter:</h4>
-        <p><strong>The Ancient Practice:</strong> Every morning, Marcus Aurelius wrote in his journal: "Today I will encounter people who are ungrateful, arrogant, dishonest, envious, and selfish. I will not be surprised or disturbed by this, because I know that they do not know what is right."</p>
-        <p><strong>Your Exercise:</strong> Tomorrow morning, before you check your phone, write one sentence about who you intend to be today — and one sentence about what you refuse to let disturb you.</p>
+      <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Join Free</button>
+      </form>
+      <div class="letter-sample" style="background:var(--obsidian);border:1px solid var(--glass-border);border-radius:5px;padding:20px;margin-top:20px;text-align:left">
+        <h4 style="font-family:'Cormorant+Garamond',serif;font-size:.95rem;color:var(--gold);margin-bottom:8px;font-style:italic">From This Week's Letter:</h4>
+        <p style="font-size:.8rem;color:var(--text-dim);line-height:1.7;font-style:italic;margin-bottom:7px"><strong>The Ancient Practice:</strong> Every morning, Marcus Aurelius wrote in his journal: "Today I will encounter people who are ungrateful, arrogant, dishonest, envious, and selfish. I will not be surprised or disturbed by this."</p>
+        <p style="font-size:.8rem;color:var(--text-dim);line-height:1.7;font-style:italic"><strong>Your Exercise:</strong> Tomorrow morning, before you check your phone, write one sentence about who you intend to be today.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AI PHILOSOPHY GUIDE -->
+<!-- AI GUIDE -->
 <section class="ai-section" id="ai-guide">
   <div class="ai-container">
     <span class="section-tag" style="display:block;text-align:center">AI Guide</span>
     <h2 class="section-title">The Philosophy <strong>AI Guide</strong></h2>
-    <p class="section-desc" style="margin:0 auto;font-style:italic">Ask anything about Stoicism, ancient philosophy, or the principles from our library. "What would Marcus Aurelius say about anxiety?"</p>
+    <p class="section-desc" style="margin:0 auto;font-style:italic">Ask anything about Stoicism, ancient philosophy, or the principles from our library.</p>
     <div class="ai-chat">
       <div class="ai-messages" id="aiMessages">
         <div class="ai-message ai">
@@ -840,96 +800,61 @@ section{padding:72px 18px}
     <span class="section-tag" style="display:block;text-align:center">Transformations</span>
     <h2 class="section-title" style="text-align:center">What <strong>Readers</strong> Say</h2>
     <div class="proof-grid">
-      <div class="proof-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Reading The Architecture of the Mind changed how I approach every decision. The Stoic framework alone was worth 10x the price."</p>
-        <div class="proof-author">— Marcus T., Entrepreneur</div>
-        <div class="proof-role">Vancouver, BC</div>
-      </div>
-      <div class="proof-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"The philosophy AI guide is unlike anything I've tried. It's like having a personal tutor in Stoicism available at 2am."</p>
-        <div class="proof-author">— Sarah K., Executive Coach</div>
-        <div class="proof-role">Toronto, ON</div>
-      </div>
-      <div class="proof-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"I've read dozens of self-help books. This is the first that connects ancient wisdom to modern psychology in a usable system."</p>
-        <div class="proof-author">— James L., Therapist</div>
-        <div class="proof-role">Calgary, AB</div>
-      </div>
-      <div class="proof-card reveal" style="background:rgba(215,174,74,.03);border-color:rgba(215,174,74,.1)">
-        <p style="font-style:italic;color:var(--text-dim);text-align:center;font-size:.82rem">Your transformation could be here — become a founding member today.</p>
-      </div>
+      <div class="proof-card reveal"><div class="stars">★★★★★</div><p>"Reading The Architecture of the Mind changed how I approach every decision. The Stoic framework alone was worth 10x the price."</p><div class="proof-author">— Marcus T., Entrepreneur</div><div class="proof-role">Vancouver, BC</div></div>
+      <div class="proof-card reveal"><div class="stars">★★★★★</div><p>"The philosophy AI guide is unlike anything I've tried. It's like having a personal tutor in Stoicism available at 2am."</p><div class="proof-author">— Sarah K., Executive Coach</div><div class="proof-role">Toronto, ON</div></div>
+      <div class="proof-card reveal"><div class="stars">★★★★★</div><p>"I've read dozens of self-help books. This is the first that connects ancient wisdom to modern psychology in a usable system."</p><div class="proof-author">— James L., Therapist</div><div class="proof-role">Calgary, AB</div></div>
+      <div class="proof-card reveal" style="background:rgba(215,174,74,.03);border-color:rgba(215,174,74,.1)"><p style="font-style:italic;color:var(--text-dim);text-align:center;font-size:.8rem">Your transformation could be here — become a founding member today.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FUTURE PRODUCTS -->
+<!-- PRODUCTS -->
 <section class="products-section" id="products">
   <div class="products-container">
     <span class="section-tag" style="display:block;text-align:center">The Complete Series</span>
     <h2 class="section-title" style="text-align:center">The Philosophy <strong>Series</strong></h2>
     <p class="section-desc" style="margin:0 auto;text-align:center;font-style:italic">Seven books. Seven dimensions of human existence.</p>
     <div class="products-grid">
-      <div class="product-card">
-        <span class="product-icon">🧠</span>
-        <h4>The Architecture of the Mind</h4>
-        <p>Foundation: mastering consciousness, identity, and beliefs.</p>
-        <div class="product-status">Available Now · $19.99</div>
+      <div class="product-card"><span class="product-icon">🧠</span><h4>The Architecture of the Mind</h4><p>Foundation: mastering consciousness, identity, and beliefs.</p><div class="product-status">Available Now · $19.99</div></div>
+      <div class="product-card"><span class="product-icon">💰</span><h4>The Philosophy of Wealth</h4><p>Stoic and Aristotelian principles for financial mastery.</p><div class="product-status">Available Now · $19.99</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">⚔️</span><h4>The Philosophy of Power</h4><p>The ancient art of influence, strategy, and inner authority.</p><div class="product-status">Coming Q3 2025</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">❤️</span><h4>The Philosophy of Relationships</h4><p>Aristotle and Plato on love, friendship, and human connection.</p><div class="product-status">Coming Q4 2025</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">👑</span><h4>The Philosophy of Leadership</h4><p>What the great Stoic leaders can teach modern executives.</p><div class="product-status">Coming 2026</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">⭐</span><h4>The Philosophy of Destiny</h4><p>Fate, free will, and the ancient debate that shaped civilization.</p><div class="product-status">Coming 2026</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">🌌</span><h4>The Philosophy of Reality</h4><p>Plato, Kant, and the nature of what is truly real.</p><div class="product-status">Coming 2026</div></div>
+      <div class="product-card coming-soon"><span class="product-icon">✨</span><h4>The Philosophy of Consciousness</h4><p>Ancient insights and modern science on the nature of awareness.</p><div class="product-status">Coming 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <span class="section-tag" style="display:block;text-align:center">Get In Touch</span>
+    <h2>Contact The <strong>Order</strong></h2>
+    <p class="contact-sub">Questions about the books, membership, or philosophy? Reach out anytime.</p>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Your email" required></div>
       </div>
-      <div class="product-card">
-        <span class="product-icon">💰</span>
-        <h4>The Philosophy of Wealth</h4>
-        <p>Stoic and Aristotelian principles for financial mastery.</p>
-        <div class="product-status">Available Now · $19.99</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">⚔️</span>
-        <h4>The Philosophy of Power</h4>
-        <p>The ancient art of influence, strategy, and inner authority.</p>
-        <div class="product-status">Coming Q3 2025</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">❤️</span>
-        <h4>The Philosophy of Relationships</h4>
-        <p>Aristotle and Plato on love, friendship, and human connection.</p>
-        <div class="product-status">Coming Q4 2025</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">👑</span>
-        <h4>The Philosophy of Leadership</h4>
-        <p>What the great Stoic leaders can teach modern executives.</p>
-        <div class="product-status">Coming 2026</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">⭐</span>
-        <h4>The Philosophy of Destiny</h4>
-        <p>Fate, free will, and the ancient debate that shaped civilization.</p>
-        <div class="product-status">Coming 2026</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">🌌</span>
-        <h4>The Philosophy of Reality</h4>
-        <p>Plato, Kant, and the nature of what is truly real.</p>
-        <div class="product-status">Coming 2026</div>
-      </div>
-      <div class="product-card coming-soon">
-        <span class="product-icon">✨</span>
-        <h4>The Philosophy of Consciousness</h4>
-        <p>Ancient insights and modern science on the nature of awareness.</p>
-        <div class="product-status">Coming 2026</div>
-      </div>
+      <div class="form-group"><label>Topic</label><input type="text" name="topic" placeholder="Philosophy, books, membership, etc."></div>
+      <div class="form-group"><label>Message</label><textarea name="message" placeholder="What can we help you with?"></textarea></div>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <a href="mailto:support@architectureofthemind.com"><i class="fas fa-envelope"></i> support@architectureofthemind.com</a>
+      <a href="https://instagram.com/architectureofthemind" target="_blank"><i class="fab fa-instagram"></i> @architectureofthemind</a>
     </div>
   </div>
 </section>
 
 <!-- ANALYTICS BANNER -->
 <div class="analytics-banner">
-  <div class="analytics-stat"><div class="stat-num" id="statVisitors">2,847</div><div class="stat-label">Visitors This Month</div></div>
-  <div class="analytics-stat"><div class="stat-num" id="statEmail">1,204</div><div class="stat-label">Email Subscribers</div></div>
-  <div class="analytics-stat"><div class="stat-num" id="statSales">347</div><div class="stat-label">Books Sold</div></div>
-  <div class="analytics-stat"><div class="stat-num" id="statMembers">89</div><div class="stat-label">Premium Members</div></div>
+  <div class="analytics-stat"><div class="stat-num">2,847</div><div class="stat-label">Visitors This Month</div></div>
+  <div class="analytics-stat"><div class="stat-num">1,204</div><div class="stat-label">Email Subscribers</div></div>
+  <div class="analytics-stat"><div class="stat-num">347</div><div class="stat-label">Books Sold</div></div>
+  <div class="analytics-stat"><div class="stat-num">89</div><div class="stat-label">Premium Members</div></div>
 </div>
 
 <!-- FOOTER -->
@@ -938,6 +863,14 @@ section{padding:72px 18px}
     <div class="footer-brand">
       <span class="logo">ARCHITECTURE OF THE MIND</span>
       <p>Ancient Wisdom.<br>Modern Psychology.<br>Personal Transformation.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/architectureofthemind" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@architectureofthemind" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@architectureofthemind" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/archmind" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://facebook.com/architectureofthemind" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://linkedin.com/company/architectureofthemind" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
     <div class="footer-col">
       <h5>Library</h5>
@@ -951,13 +884,14 @@ section{padding:72px 18px}
       <a href="#archive">The Archive</a>
       <a href="#paths">Reading Paths</a>
       <a href="#timeline">Philosophy Timeline</a>
-      <a href="#letter">Newsletter</a>
+      <a href="#newsletter">Newsletter</a>
     </div>
     <div class="footer-col">
       <h5>Legal</h5>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Refund Policy</a>
+      <a href="privacy.html" target="_blank">Privacy Policy</a>
+      <a href="terms.html" target="_blank">Terms of Use</a>
+      <a href="refund.html" target="_blank">Refund Policy</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -967,7 +901,7 @@ section{padding:72px 18px}
 
 <script>
 // PARTICLES
-const pContainer = document.getElementById('particles');
+const pContainer=document.getElementById('particles');
 for(let i=0;i<36;i++){
   const p=document.createElement('div');
   p.className='particle';
@@ -978,15 +912,11 @@ for(let i=0;i<36;i++){
 }
 
 // SCROLL REVEAL
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.08});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
-});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);});
 
 // QUIZ
 const quizQuestions=[
@@ -1010,11 +940,11 @@ const quizQuestions=[
   ]}
 ];
 const archetypes={
-  architect:{name:"The Architect",desc:"You see life as a system to be engineered. You seek mastery, structure, and the hidden laws that govern reality. Like Aristotle, you believe excellence is a skill cultivated through deliberate practice. Your mind builds frameworks that others inherit.",type:"ARCHITECT"},
+  architect:{name:"The Architect",desc:"You see life as a system to be engineered. You seek mastery, structure, and the hidden laws that govern reality. Like Aristotle, you believe excellence is a skill cultivated through deliberate practice.",type:"ARCHITECT"},
   stoic:{name:"The Stoic",desc:"You have glimpsed that external things cannot harm your mind — only your judgments about them can. Like Marcus Aurelius and Epictetus, you walk through chaos with inexplicable calm. Your power is the fortress within.",type:"STOIC PHILOSOPHER"},
-  visionary:{name:"The Visionary",desc:"You see what others cannot. Where others see obstacles, you see possibilities. Like Plato, you live in two worlds — the imperfect shadow-reality and the luminous realm of ideals you are always reaching toward.",type:"VISIONARY"},
-  warrior:{name:"The Warrior",desc:"Life is a test. Every adversity is an opponent to be overcome. Like the Spartans and Seneca, you believe difficulty is the forge in which character is made. You do not break. You bend.",type:"WARRIOR"},
-  sage:{name:"The Sage",desc:"You seek truth above all else — even when truth is uncomfortable. Like Socrates, you know that unexamined life is not worth living. Your power is deep understanding. You ask the questions everyone else avoids.",type:"SAGE"}
+  visionary:{name:"The Visionary",desc:"You see what others cannot. Where others see obstacles, you see possibilities. Like Plato, you live in two worlds — the imperfect shadow-reality and the luminous realm of ideals.",type:"VISIONARY"},
+  warrior:{name:"The Warrior",desc:"Life is a test. Every adversity is an opponent to be overcome. Like the Spartans and Seneca, you believe difficulty is the forge in which character is made. You do not break.",type:"WARRIOR"},
+  sage:{name:"The Sage",desc:"You seek truth above all else. Like Socrates, you know that unexamined life is not worth living. Your power is deep understanding.",type:"SAGE"}
 };
 let currentQ=0,answers={};
 function renderQuiz(){
@@ -1039,19 +969,19 @@ function showResults(){
 }
 document.getElementById('qNext').onclick=()=>{if(answers[currentQ]===undefined)return;if(currentQ<quizQuestions.length-1){currentQ++;renderQuiz();}else{showResults();}};
 document.getElementById('qBack').onclick=()=>{if(currentQ>0){currentQ--;renderQuiz();}};
-function submitArchetype(){const email=document.getElementById('archetypeEmail').value;if(email)alert('Your full archetype report has been sent to '+email+'!');}
+function submitArchetype(){const email=document.getElementById('archetypeEmail').value;if(email)alert('Your full archetype report has been sent to '+email+'! Welcome to the journey.');}
 renderQuiz();
 
 // MIND MAP
 const nodeData={
-  philosophy:{title:"Philosophy",text:"Philosophy is the love of wisdom. Socrates said the unexamined life is not worth living. Philosophy gives you the framework to examine every dimension of your existence — identity, relationships, purpose, and reality itself."},
+  philosophy:{title:"Philosophy",text:"Philosophy is the love of wisdom. Socrates said the unexamined life is not worth living. Philosophy gives you the framework to examine every dimension of your existence."},
   identity:{title:"Identity",text:"True identity is the alignment between your actions and your deepest values. The Stoics called this 'the inner citadel' — an unshakeable sense of self that no external event can penetrate."},
-  beliefs:{title:"Beliefs",text:"Your beliefs filter reality. Marcus Aurelius said: 'The impediment to action advances action. What stands in the way becomes the way.' Your beliefs can either limit you or liberate you."},
-  habits:{title:"Habits",text:"Aristotle taught that excellence is not an act but a habit. Every morning you either invest in your future self or sabotage it. The Architecture of the Mind system gives you the habits of ancient wisdom holders."},
+  beliefs:{title:"Beliefs",text:"Your beliefs filter reality. Marcus Aurelius said: 'The impediment to action advances action. What stands in the way becomes the way.'"},
+  habits:{title:"Habits",text:"Aristotle taught that excellence is not an act but a habit. Every morning you either invest in your future self or sabotage it."},
   wealth:{title:"Wealth",text:"Wealth is not just money — it is the abundance of a well-lived life. The Stoics taught that true wealth is having what you need and desiring nothing more."},
   relationships:{title:"Relationships",text:"Aristotle said the highest friendship is where both parties wish for the excellence of the other. Your relationships are the mirror of your own character."},
   leadership:{title:"Leadership",text:"Marcus Aurelius ruled an empire while writing philosophical meditations. True leadership is not about power over others but about mastering yourself."},
-  consciousness:{title:"Human Consciousness",text:"Consciousness is the one thing you know exists — because you are experiencing it right now. This library maps its architecture: how it works, how it can be trained, and how to align it with your deepest intentions."}
+  consciousness:{title:"Human Consciousness",text:"Consciousness is the one thing you know exists. This library maps its architecture: how it works, how it can be trained, and how to align it with your deepest intentions."}
 };
 function openNode(key){const d=nodeData[key];document.getElementById('modalTitle').textContent=d.title;document.getElementById('modalText').textContent=d.text;document.getElementById('nodeModal').classList.add('active');}
 function closeNode(){document.getElementById('nodeModal').classList.remove('active');}
@@ -1092,12 +1022,12 @@ function filterArchive(el,cat){
 
 // READING PATHS
 const pathData={
-  mindset:{title:"Mindset Path",type:"Start Here",desc:"The foundation of all transformation is how you see reality. This path builds the philosophical底层 that makes everything else possible.",steps:["Read: The Architecture of the Mind — Chapters 1-3","Practice: Morning journaling (5 min/day) — what did you think about today?","Read: Epictetus — Handbook (30 min)","Apply: Identify one belief that limits you. Question it this week."]},
+  mindset:{title:"Mindset Path",type:"Start Here",desc:"The foundation of all transformation is how you see reality. This path builds the philosophical底层 that makes everything else possible.",steps:["Read: The Architecture of the Mind — Chapters 1-3","Practice: Morning journaling (5 min/day)","Read: Epictetus — Handbook (30 min)","Apply: Identify one belief that limits you. Question it this week."]},
   wealth:{title:"Wealth Path",type:"Financial Philosophy",desc:"Redefine your relationship with money through Stoic and Aristotelian principles that have outlasted empires.",steps:["Read: The Philosophy of Wealth — full book","Practice: Track every expenditure for 7 days without judgment","Apply: Define 'enough' — write it down. Revisit monthly."]},
   relationships:{title:"Relationships Path",type:"Aristotle's Framework",desc:"Aristotle, Plato, and the Stoics had more to say about human connection than any modern dating coach.",steps:["Read: The Philosophy of Relationships — when available","Apply: Identify your 5 closest relationships. Which are utility, pleasure, or virtue?","Practice: Reach out to one person you admire — without asking for anything."]},
-  discipline:{title:"Discipline Path",type:"Stoic Practice",desc:"The Stoics were obsessed with training. Not fitness — the mind. Voluntary discomfort, morning routines, evening reviews.",steps:["Read: Seneca — On the Shortness of Life","Practice: One cold shower per week. One fast day per month.","Apply: Build a 10-minute morning Stoic practice — read one quote, write one sentence."]},
-  leadership:{title:"Leadership Path",type:"Marcus Aurelius Model",desc:"The philosopher-emperor ruled Rome while maintaining his philosophical practice. Duty without attachment.",steps:["Read: Marcus Aurelius — Meditations (available free online)","Apply: Lead one meeting this week with complete presence — no phone, no distraction.","Practice: End each day asking: Did I serve those I lead today?"]},
-  purpose:{title:"Purpose Path",type:"Socratic Inquiry",desc:"The question Socrates said is the most important: 'How should one live?' This path forces you to answer it.",steps:["Read: Plato — The Allegory of the Cave (Republic, Book VII)","Apply: Write 500 words — what would your ideal day look like if nothing could stop you?","Practice: Ask yourself this question every Sunday evening."]}
+  discipline:{title:"Discipline Path",type:"Stoic Practice",desc:"The Stoics were obsessed with training. Not fitness — the mind. Voluntary discomfort, morning routines, evening reviews.",steps:["Read: Seneca — On the Shortness of Life","Practice: One cold shower per week. One fast day per month.","Apply: Build a 10-minute morning Stoic practice."]},
+  leadership:{title:"Leadership Path",type:"Marcus Aurelius Model",desc:"The philosopher-emperor ruled Rome while maintaining his philosophical practice. Duty without attachment.",steps:["Read: Marcus Aurelius — Meditations (free online)","Apply: Lead one meeting this week with complete presence.","Practice: End each day asking: Did I serve those I lead today?"]},
+  purpose:{title:"Purpose Path",type:"Socratic Inquiry",desc:"The question Socrates said is the most important: 'How should one live?' This path forces you to answer it.",steps:["Read: Plato — The Allegory of the Cave (Republic, Book VII)","Apply: Write 500 words — what would your ideal day look like?","Practice: Ask yourself this question every Sunday evening."]}
 };
 function selectPath(el,key){
   document.querySelectorAll('.path-btn').forEach(b=>b.classList.remove('active'));
@@ -1105,13 +1035,7 @@ function selectPath(el,key){
   const d=pathData[key];
   const result=document.getElementById('pathResult');
   result.classList.add('active');
-  result.innerHTML=`<div class="path-type">${d.type}</div><h3>${d.title}</h3><p>${d.desc}</p><ol>${d.steps.map(s=>`<li>${s}</li>`).join('')}</ol><button class="btn-primary" style="margin-top:20px;display:inline-block;text-decoration:none" onclick="document.getElementById('membership').scrollIntoView({behavior:'smooth'})">Start This Path</button>`;
-}
-
-// NEWSLETTER
-function subscribeLetter(){
-  const email=document.getElementById('letterEmail').value;
-  if(email)alert('Welcome to The Architect\'s Letter, '+email+'! Your first letter arrives this Sunday.');
+  result.innerHTML=`<div class="path-type">${d.type}</div><h3>${d.title}</h3><p>${d.desc}</p><ol>${d.steps.map(s=>`<li>${s}</li>`).join('')}</ol><a href="#membership" class="btn-primary" style="display:inline-block;text-decoration:none;margin-top:16px" onclick="document.getElementById('membership').scrollIntoView({behavior:'smooth'})">Start This Path</a>`;
 }
 
 // AI
@@ -1129,10 +1053,7 @@ function sendAIMessage(){
   const msgs=document.getElementById('aiMessages');
   msgs.innerHTML+=`<div class="ai-message user">${msg}</div>`;
   const aiMsg=aiResponses[Math.floor(Math.random()*aiResponses.length)];
-  setTimeout(()=>{
-    msgs.innerHTML+=`<div class="ai-message ai"><div class="ai-label">Philosophy Guide</div>${aiMsg}</div>`;
-    msgs.scrollTop=msgs.scrollHeight;
-  },700);
+  setTimeout(()=>{msgs.innerHTML+=`<div class="ai-message ai"><div class="ai-label">Philosophy Guide</div>${aiMsg}</div>`;msgs.scrollTop=msgs.scrollHeight;},700);
   input.value='';
 }
 </script>
